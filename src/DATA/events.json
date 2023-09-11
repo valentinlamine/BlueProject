@@ -1,0 +1,22 @@
+[
+  {
+    "title": "The main event title",
+    "description": "The main event description",
+    "left-choice": "The left choice",
+    "right-choice": "The right choice",
+    "left-choice-result": {
+      "money": 0,
+      "reputation": 0,
+      "object": 0,
+      "isAdd": true
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 0,
+      "object": 0,
+      "isAdd": false
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The right choice image"
+  }
+]
