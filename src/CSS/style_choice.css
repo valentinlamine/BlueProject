@@ -1,0 +1,181 @@
+/* Pour ordinateur */
+@font-face {
+  font-family: 'Minecraftia';
+  src: url('../police/MinecraftiaRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  }
+  
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Minecraftia', sans-serif;
+}
+
+.left_choice {
+  float: left;
+  position : relative;
+  width: 50%;
+  height: 100%;
+  background-color: #000;
+  padding: 0px;
+}
+
+img {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  opacity: 0.5;
+}
+
+.right_choice {
+  float: right;
+  position : relative;
+  width: 50%;
+  height: 100%;
+  background-color: #000;
+  padding: 0px;
+}
+
+.center_text {
+  border-radius: 20px;
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: auto;
+  padding: 0px 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.left_choice:hover, .right_choice:hover{
+  cursor: pointer;
+}
+
+img:hover {
+  opacity: 1;
+}
+
+.info:hover ~ img {
+  opacity: 1;
+}
+
+.info{
+  width: auto;
+  opacity: 0;
+  position: absolute;
+  z-index: 9999;
+  top: 80%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(0,0,0, 0.4);
+  color: white;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+  padding: 5px 10px;
+  padding-bottom: 6px;
+}
+
+.info > span {
+  filter: blur(0);
+}
+
+.left_choice:hover .info{
+  opacity: 1;
+}
+
+.right_choice:hover .info{
+  opacity: 1;
+}
+
+#replace_left {
+  visibility: hidden;
+}
+
+#replace_left:after {
+  visibility: visible;
+  content: "la gauche";
+}
+
+#replace_right {
+  visibility: hidden;
+}
+
+#replace_right:after {
+  visibility: visible;
+  content: "la droite";
+}
+
+/* Pour mobile */
+@media screen and (max-width: 600px) {
+  #replace_left {
+    visibility: hidden;
+
+  }
+
+  #replace_left:after {
+    visibility: visible;
+    content: "le haut";
+  }
+  #replace_right {
+    visibility: hidden;
+  }
+  
+  #replace_right:after {
+    visibility: visible;
+    content: "le bas";
+  }
+  .left_choice, .right_choice {
+    width: 100%;
+    height: 50%;
+  }
+  
+  .left_choice {
+    float: none;
+  }
+  
+  .right_choice {
+    float: none;
+  }
+  
+  .center_text {
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: smaller;
+  }
+  
+  .info {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    text-align: center;
+    font-size: smaller;
+  }
+
+  #info_bottom_mobile {
+    top:80%;
+  }
+}
