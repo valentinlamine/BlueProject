@@ -19,8 +19,16 @@
     - Bouger les micros-ondes (+reput)
     - appeler un technicien pour le wifi(-budget,-reput)
 
-- Si option 2,Les eleves se plaignent encore du wifi que faire ?
+  Si option 2,Les eleves se plaignent encore du wifi que faire ?
 	- Bouger les micro-ondes
     - Changer le réseau
+
+- Mettre une serrure sur la porte des salles de cours :
+    - Oui (-budget)
+    - Non (nothing)
+
+  Si option 2 vous avez une chance qu'un eleve vous vole la A1:
+    - Vous perdez de l'argent (--budget)
+    
 
     
