@@ -8,13 +8,13 @@
       "money": 0,
       "reputation": 0,
       "object": 0,
-      "isAdd": true
+      "ObjectQuantity": 1
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 0,
       "object": 0,
-      "isAdd": false
+        "ObjectQuantity": -1
     },
     "left-choice-image": "The left choice image",
     "right-choice-image": "The right choice image"
