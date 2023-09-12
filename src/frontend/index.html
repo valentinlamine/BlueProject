@@ -4,15 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style_main.css">
-    <title>Minecraft-Web</title>
+    <link rel="stylesheet" href="CSS/style_main.css">
+    <title>Admin Simulator</title>
 </head>
 <body>
     <div class="bg-image"></div>
     <div class="bg-text">
-        <h1>Bienvenue sur Admin simulator</h1>
-        <p>texte de présentation</p>
-        <button onclick="" class="minecraft-btn mx-auto w-64 text-center text-white truncate p-1 border-2 border-b-4 hover:text-yellow-200">Commencer !</button>
+        <div class="left-part">
+            <div class="logo-ctn">
+                <img class="logo" src="ASSETS/logo_ynov_campus_blanc.svg" alt="Logo Ynov">
+            </div>
+            <h1>Bienvenue sur le jeu Admin Simulator</h1>
+            <p>Dans ce jeu, vous incarnez l'administration d'une école d'informatique et devez faire face à des problèmes de plus en plus complexes.</p>
+            <p>Vous devrez faire des choix qui auront des conséquences sur l'école et ses élèves.</p>
+        </div>
+        <div class="right-part">
+            <h1>Création du personnage</h1>
+            <form action="" method="post">
+                <label for="name">Nom du personnage :</label>
+                <input type="text" name="name" id="name" placeholder="Nom">
+                <p>Objet de départ :</p>
+                <div class="radio-ctn">
+                    <div class="radio">
+                        <input type="radio" id="item1" name="item" value="item1" checked>
+                        <label for="item1">
+                            <img src="ASSETS/default.jpg">
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="item2" name="item" value="item2">
+                        <label for="item2">
+                            <img src="ASSETS/default.jpg">
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" id="item3" name="item" value="item3">
+                        <label for="item3">
+                            <img src="ASSETS/default.jpg">
+                        </label>
+                    </div>
+                </div>
+                <input type="submit" value="Commencer le jeu">
+            </form>
+        </div>
     </div>
-   </body>
+</body>
 </html>
