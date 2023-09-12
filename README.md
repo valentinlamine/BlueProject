@@ -27,7 +27,7 @@
     - appeler un technicien pour le wifi(-budget,-reput,-etat)
 
   Si option 2,Les eleves se plaignent encore du wifi que faire ?
-	- Bouger les micro-ondes
+	  - Bouger les micro-ondes
     - Changer le réseau
 
 - Mettre une serrure sur la porte des salles de cours :

@@ -18,7 +18,7 @@
       "object-id": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
+    "left-choice-image": "ASSETS/guy-in-corporate-suit-swimming-in-money.gif",
     "right-choice-image": "The right choice image"
   },
   {
@@ -34,13 +34,189 @@
       "ObjectQuantity": 1
     },
     "right-choice-result": {
+      "money": -250,
+      "reputation": -10,
+      "etat": -10,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The right choice image"
+  },
+  {
+    "title": "Le Wifi !?!",
+    "description": "Le wifi ne marche pas,encore... Que faites vous ?",
+    "left-choice": "changer le reseau",
+    "right-choice": "changer les micro-ondes de place",
+    "left-choice-result": {
+      "money": -1000,
+      "reputation": 10,
+      "etat": 10,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 10,
+      "etat": 10,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "title": "Les serrures",
+    "description": "Voulez vous installer des serrures sur les portes ?",
+    "left-choice": "Oui",
+    "right-choice": "Non",
+    "left-choice-result": {
+      "money": -300,
+      "reputation": 0,
+      "etat": 20,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
       "money": 0,
       "reputation": 0,
       "etat": 0,
       "object": 0,
-        "ObjectQuantity": -1
+        "ObjectQuantity": 0
     },
     "left-choice-image": "The left choice image",
-    "right-choice-image": "The right choice image"
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "title": "Le cambriolage",
+    "description": "un eleve vous vole le contenu de la A1 ",
+    "left-choice": "pleurer en A1",
+    "right-choice": "Pleurer au bureau",
+    "left-choice-result": {
+      "money": -500,
+      "reputation": -2,
+      "etat": -10,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": -500,
+      "reputation": 0,
+      "etat": -10,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "title": "BDE",
+    "description": "Le BDE vous demande de l'argent pour organiser une soirée, que faites vous ?",
+    "left-choice": "Donner de l'argent",
+    "right-choice": "Refuser de donner de l'argent",
+    "left-choice-result": {
+      "money": -1200,
+      "reputation": 30,
+      "etat": -30,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": -10,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "title": "Projet ambitieux 1",
+    "description": "Un eleve vous demande de l'argent pour un projet ambitieux, que faites vous ?",
+    "left-choice": "Donner de l'argent",
+    "right-choice": "Refuser de donner de l'argent",
+    "left-choice-result": {
+      "money": -125,
+      "reputation": 10,
+      "etat": 0,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": -10,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "title": "Projet ambitieux 2",
+    "description": "Un eleve vous demande de l'argent pour un projet ambitieux, que faites vous ?",
+    "left-choice": "Donner de l'argent",
+    "right-choice": "Refuser de donner de l'argent",
+    "left-choice-result": {
+      "money": 350,
+      "reputation": 10,
+      "etat": 10,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": -10,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "title": "Multiprise",
+    "description": "Un eleve vous demande de l'argent pour un projet ambitieux, que faites vous ?",
+    "left-choice": "Donner de l'argent",
+    "right-choice": "Refuser de donner de l'argent",
+    "left-choice-result": {
+      "money": 0,
+      "reputation": 30,
+      "etat": 0,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 10,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "title": "Incendie",
+    "description": "Un incendie se declare dans la salle de pause, que faites vous ?",
+    "left-choice": "Réparer les dégats",
+    "right-choice": "Vous n'avez plus de budget pour réparer les dégats",
+    "left-choice-result": {
+      "money": 0,
+      "reputation": 30,
+      "etat": 0,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 10,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
   }
 ]
