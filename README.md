@@ -1,5 +1,11 @@
 # BlueProject-rename-
 
+## Stats du jeu
+- Budget
+- Reputation (de -100 à 100)
+- Etat de l'école (de 0 à 100)
+
+
 ## Item de base
 - Partenariat (++buget)
 - Midi Crepe (++reputation)
@@ -42,7 +48,7 @@
     - Vous les pretez quand meme (++reput)
     - Vous ne les pretez pas (-reput)
   Si option 1 vous avez une chance qu'un incendie se déclare apres le passage d'un marchant:
-    - Vous payez les réparation (--budget)
+    - Vous payez les réparation (---budget)
     - Vous n'avez pas l'argent (fin de la partie)
 
 - Un eleve a un probleme d'accés à l'extranet:
@@ -56,7 +62,7 @@
 
 ## Les Marchants
 
-- Marchant louche (Uniqeuement des objets pas cher mais pas tous très fiables)
+- Marchant louche (Uniquement des objets pas cher mais pas tous très fiables)
 - Marchant normal (Objets de base)
 - Marchant de luxe (Objets chers et très inutiles pour la plupart)
 - Le Publiciatire (Vous propose de faire de la pub pour votre école en échange d'un peu d'argent)

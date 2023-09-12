@@ -9,3 +9,5 @@ var rightText = document.getElementById('right-text');
 
 var mainTitle = document.getElementById('main-title');
 var mainText = document.getElementById('main-text');
+
+
