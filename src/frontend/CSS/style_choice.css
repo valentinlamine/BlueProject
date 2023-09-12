@@ -1,10 +1,8 @@
 /* Pour ordinateur */
-@font-face {
-  font-family: 'Minecraftia';
-  src: url('../police/MinecraftiaRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  }
+html {
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+    background-color: #eeeeee;
+}
 
 body, html {
   height: 100%;
@@ -15,7 +13,6 @@ body, html {
 * {
   box-sizing: border-box;
   overflow: hidden;
-  font-family: 'Minecraftia', sans-serif;
 }
 
 .left_choice {
@@ -24,7 +21,7 @@ body, html {
   width: 50%;
   height: 100%;
   background-color: #000;
-  padding: 0px;
+  padding: 0;
 }
 
 img {
@@ -111,7 +108,7 @@ img:hover {
 
 #replace_left:after {
   visibility: visible;
-  content: "la gauche";
+  content: "la gauche pour";
 }
 
 #replace_right {
@@ -120,7 +117,7 @@ img:hover {
 
 #replace_right:after {
   visibility: visible;
-  content: "la droite";
+  content: "la droite pour";
 }
 
 /* Pour mobile */
@@ -132,7 +129,7 @@ img:hover {
 
   #replace_left:after {
     visibility: visible;
-    content: "le haut";
+    content: "le haut pour";
   }
   #replace_right {
     visibility: hidden;
@@ -140,7 +137,7 @@ img:hover {
   
   #replace_right:after {
     visibility: visible;
-    content: "le bas";
+    content: "le bas pour";
   }
   .left_choice, .right_choice {
     width: 100%;
