@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Item's name",
+    "description": "Item's description",
+    "BuyPrice": 100,
+    "SellPrice": 50,
+    "effects": 1
+  }
+]
