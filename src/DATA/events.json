@@ -7,12 +7,14 @@
     "left-choice-result": {
       "money": 100,
       "reputation": -10,
+      "etat": 0,
       "object-id": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 10,
+      "etat": 0,
       "object-id": 0,
         "ObjectQuantity": 0
     },
@@ -26,13 +28,15 @@
     "right-choice": "appeler un technicien pour le wifi",
     "left-choice-result": {
       "money": 0,
-      "reputation": 0,
+      "reputation": 10,
+      "etat": 10,
       "object": 0,
       "ObjectQuantity": 1
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 0,
+      "etat": 0,
       "object": 0,
         "ObjectQuantity": -1
     },

@@ -1,7 +1,10 @@
 package backend
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
 
-func IndexHandler() {
+func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("test")
 }
