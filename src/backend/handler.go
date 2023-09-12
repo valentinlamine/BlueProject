@@ -24,8 +24,6 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	game = Game{
 		Tmp: "test",
 	}
-	GetData()
-	// RandomEvent()
 
 	tmpl.Execute(w, game)
 }
