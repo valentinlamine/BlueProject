@@ -29,6 +29,34 @@
 
   Si option 2 vous avez une chance qu'un eleve vous vole la A1:
     - Vous perdez de l'argent (--budget)
+
+- Un membre du BDE vous demande de l'argent pour un évenement:
+    - Oui (---budget)
+    - Non (--reput)
+
+- Un eleve vous demande de l'argent pour un projet ambitieux:
+    - Oui (50% de chance de perdre de l'argent et 50% de chance de gagner de la reputation et de recupérer l'argent investi)
+    - Non (-reput)
+
+- Vous n'etes pas autorisé a préter des multiprises aux eleves:
+    - Vous les pretez quand meme (++reput)
+    - Vous ne les pretez pas (-reput)
+  Si option 1 vous avez une chance qu'un incendie se déclare apres le passage d'un marchant:
+    - Vous payez les réparation (--budget)
+    - Vous n'avez pas l'argent (fin de la partie)
+
+- Un eleve a un probleme d'accés à l'extranet:
+    - Vous l'aidez (+reput)
+    - Vous ne l'aidez pas (-reput)
+
+- Le service communication vous propose de faire une campagne de com dans des lycées:
+    - Oui (++budget)
+    - Non (nothing)
     
 
-    
+## Les Marchants
+
+- Marchant louche (Uniqeuement des objets pas cher mais pas tous très fiables)
+- Marchant normal (Objets de base)
+- Marchant de luxe (Objets chers et très inutiles pour la plupart)
+- Le Publiciatire (Vous propose de faire de la pub pour votre école en échange d'un peu d'argent)
