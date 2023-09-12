@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "CVEC",
     "description": "Le CVEC d'un eleve arrive dans votre budget par erreur comment reagissez vous ?",
     "left-choice": "Tout garder pour vous",
@@ -22,6 +23,7 @@
     "right-choice-image": "The right choice image"
   },
   {
+    "id": 2,
     "title": "Problemes de wifi et d'organisation",
     "description": "La salle de pause est mal organisée et le wifi ne marche pas, que faites vous ?",
     "left-choice": "Bouger les micro-ondes",
@@ -44,6 +46,7 @@
     "right-choice-image": "The right choice image"
   },
   {
+    "id": 3,
     "title": "Le Wifi !?!",
     "description": "Le wifi ne marche pas,encore... Que faites vous ?",
     "left-choice": "changer le reseau",
@@ -66,6 +69,7 @@
     "right-choice-image": "The rght choice image"
   },
   {
+    "id": 4,
     "title": "Les serrures",
     "description": "Voulez vous installer des serrures sur les portes ?",
     "left-choice": "Oui",
@@ -88,6 +92,7 @@
     "right-choice-image": "The rght choice image"
   },
   {
+    "id": 5,
     "title": "Le cambriolage",
     "description": "un eleve vous vole le contenu de la A1 ",
     "left-choice": "pleurer en A1",
@@ -110,6 +115,7 @@
     "right-choice-image": "The rght choice image"
   },
   {
+    "id": 6,
     "title": "BDE",
     "description": "Le BDE vous demande de l'argent pour organiser une soirée, que faites vous ?",
     "left-choice": "Donner de l'argent",
@@ -132,6 +138,7 @@
     "right-choice-image": "The rght choice image"
   },
   {
+    "id": 7,
     "title": "Projet ambitieux 1",
     "description": "Un eleve vous demande de l'argent pour un projet ambitieux, que faites vous ?",
     "left-choice": "Donner de l'argent",
@@ -154,6 +161,7 @@
     "right-choice-image": "The rght choice image"
   },
   {
+    "id": 8,
     "title": "Projet ambitieux 2",
     "description": "Un eleve vous demande de l'argent pour un projet ambitieux, que faites vous ?",
     "left-choice": "Donner de l'argent",
@@ -176,6 +184,7 @@
     "right-choice-image": "The rght choice image"
   },
   {
+    "id": 9,
     "title": "Multiprise",
     "description": "Un eleve vous demande de l'argent pour un projet ambitieux, que faites vous ?",
     "left-choice": "Donner de l'argent",
@@ -198,6 +207,7 @@
     "right-choice-image": "The rght choice image"
   },
   {
+    "id": 10,
     "title": "Incendie",
     "description": "Un incendie se declare dans la salle de pause, que faites vous ?",
     "left-choice": "Réparer les dégats",
