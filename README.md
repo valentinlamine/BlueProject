@@ -15,6 +15,7 @@
 - Mastercard du siege (évite la banqueroute)
 - nv1:babyfoot, nv2:billard, nv3:borne d'arcade
 - Certificat médical (évite un event)
+- disque dur compromettant (évite la prison)s
 
 ## Event
 - Le CVEC d'un eleve arrive dans votre budget par erreur:
@@ -83,14 +84,24 @@
     - Vous les appelez (---budget,++reput)
     - Vous ne les appelez pas (nothing)
 
-- Pour économiser de l'argent vous pouvez virer une personne :
+- Pour économiser de l'argent vous devez virer une personne :
     - Vous virez un intervenant (++budget,-reput)
     - Vous virez votre collegue (++budget,-reput)
 
+- Une personne oublie un disque dur dans votre école :
+    - Vous le gardez (+disque dur compromettant )
+    - Vous le rendez (+reput)
+
   Si option 2 et que vous n'avez pas appelé les impots ,votre ex-collegue vous dénonce:
     - Vous allez en prison (fin de la partie)
+    - Si vous avez le disque dur compromettant vous menacez votre collegue et vous ne finissez pas en prison (nothing)
 
 
+
+
+- Le Crous vous achete du materiel pour votre terrasse :
+    - Vous acceptez (++etat,+reput)
+    - Vous revendez le materiel (++budget,-reput)
     
 
 ## Les Marchants
