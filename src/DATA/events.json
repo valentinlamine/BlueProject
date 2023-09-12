@@ -1,0 +1,42 @@
+[
+  {
+    "title": "CVEC",
+    "description": "Le CVEC d'un eleve arrive dans votre budget par erreur comment reagissez vous ?",
+    "left-choice": "Tout garder pour vous",
+    "right-choice": "Le rendre au Crous",
+    "left-choice-result": {
+      "money": 100,
+      "reputation": -10,
+      "object-id": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 10,
+      "object-id": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The right choice image"
+  },
+  {
+    "title": "Problemes de wifi et d'organisation",
+    "description": "La salle de pause est mal organisée et le wifi ne marche pas, que faites vous ?",
+    "left-choice": "Bouger les micro-ondes",
+    "right-choice": "appeler un technicien pour le wifi",
+    "left-choice-result": {
+      "money": 0,
+      "reputation": 0,
+      "object": 0,
+      "ObjectQuantity": 1
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 0,
+      "object": 0,
+        "ObjectQuantity": -1
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The right choice image"
+  }
+]
