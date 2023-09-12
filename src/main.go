@@ -11,9 +11,9 @@ import (
 
 func main() {
 	r := mux.NewRouter()
-	r.PathPrefix("/ASSETS/").Handler(http.StripPrefix("/ASSETS/", http.FileServer(http.Dir("/ASSETS"))))
-	r.PathPrefix("/CSS/").Handler(http.StripPrefix("/CSS/", http.FileServer(http.Dir("/CSS"))))
-	r.PathPrefix("/JS/").Handler(http.StripPrefix("/JS/", http.FileServer(http.Dir("/JS"))))
+	r.PathPrefix("./ASSETS/").Handler(http.StripPrefix("./ASSETS/", http.FileServer(http.Dir("./ASSETS/"))))
+	r.PathPrefix("./CSS/").Handler(http.StripPrefix("./CSS/", http.FileServer(http.Dir("./CSS/"))))
+	r.PathPrefix("./JS/").Handler(http.StripPrefix("./JS/", http.FileServer(http.Dir("./JS/"))))
 
 	//handle routing
 	r.HandleFunc("/", backend.IndexHandler)
