@@ -228,5 +228,305 @@
     },
     "left-choice-image": "The left choice image",
     "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 11,
+    "title": "Extranet",
+    "description": "Un eleve a un probleme d'accés a l'extranet, que faites vous ?",
+    "left-choice": "Vous l'aidez",
+    "right-choice": "Vous ne l'aidez pas",
+    "left-choice-result": {
+      "money": 0,
+      "reputation": 10,
+      "etat": 0,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": -10,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 12,
+    "title": "La Campagne",
+    "description": "Les eleves de market/comm vous propose de faire une campagne de communicatin dans des lycées gratuitement, que faites vous ?",
+    "left-choice": "Vous acceptez",
+    "right-choice": "Vous refusez",
+    "left-choice-result": {
+      "money": 6700,
+      "reputation": 10,
+      "etat": 0,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 0,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 13,
+    "title": "L'Invasion",
+    "description": "Il y a une invasion de cafard dans votre école que faites vous ?", 
+    "left-choice": "Vous appelez une entreprise de désinsectisation",
+    "right-choice": "Vous ne faites rien",
+    "left-choice-result": {
+      "money": -120,
+      "reputation": 10,
+      "etat": 20,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": -10,
+      "etat": -20,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 14,
+    "title": "Les Distributeurs",
+    "description": "Les distributeurs de la salle de pause sont cassés, que faites vous ?", 
+    "left-choice": "Vous appelez un technicien",
+    "right-choice": "Vous ne faites rien",
+    "left-choice-result": {
+      "money": -120,
+      "reputation": 10,
+      "etat": 20,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": -10,
+      "etat": -20,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 15,
+    "title": "Le Mur",
+    "description": "Un des murs de l'école est pas très beau, que faites vous ?",
+    "left-choice": "Vous faites appel à un peintre",
+    "right-choice": "Vous faites appel au M2 Crea/design",
+    "left-choice-result": {
+      "money": -200,
+      "reputation": -10,
+      "etat": 10,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 10,
+      "etat": -10,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 16,
+    "title": "L'eleve suisse",
+    "description": "Un eleve veut payer ses 3 années en une fois et en especes que faites vous ?",
+    "left-choice": "Vous déclarer l'argent",
+    "right-choice": "Vous acceptez l'argent sans le déclarer  ",
+    "left-choice-result": {
+      "money": 0,
+      "reputation": 0,
+      "etat": 0,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 14500,
+      "reputation": 0,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 17,
+    "title": "Les poubelles",
+    "description": "Vous voulez changer les poubelles pour des poubelles de tris mais il y en aura moins que faites vous ?",
+    "left-choice": "Vous les changez",
+    "right-choice": "Vous ne les changez pas",
+    "left-choice-result": {
+      "money": -100,
+      "reputation": -10,
+      "etat": 10,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 14500,
+      "reputation": 0,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 18,
+    "title": "Les Impots",
+    "description": "Les impots ne vous ont rien demandé depuis longtemps que faites vous ?",
+    "left-choice": "Vous les appelé",
+    "right-choice": "Vous ne les appelez pas",
+    "left-choice-result": {
+      "money": -5000,
+      "reputation": 20,
+      "etat": 0,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 0,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 19,
+    "title": "restriction budgetaire",
+    "description": "- Pour économiser de l'argent vous devez virer une personne de l'école, qui choisissez vous ?",
+    "left-choice": "Vous virez un intervenant",
+    "right-choice": "Vous virez votre collègue",
+    "left-choice-result": {
+      "money": 400,
+      "reputation": -10,
+      "etat": 0,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 400,
+      "reputation": -10,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 20,
+    "title": "restriction budgetaire",
+    "description": "Pour économiser de l'argent vous devez virer une personne de l'école, qui choisissez vous ?",
+    "left-choice": "Vous virez un intervenant",
+    "right-choice": "Vous virez votre collègue",
+    "left-choice-result": {
+      "money": 400,
+      "reputation": -10,
+      "etat": 0,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 400,
+      "reputation": -10,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 21,
+    "title": "Les Disque Dur",
+    "description": "Une personne oublie un disque dur dans votre école que faites vous ?",
+    "left-choice": "Vous le gardez",
+    "right-choice": "Vous le rendez à la personne",
+    "left-choice-result": {
+      "money": 0,
+      "reputation": -10,
+      "etat": 0,
+      "object": "Disque dur compromettant",
+      "ObjectQuantity": 1
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 10,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 22,
+    "title": "Trahison",
+    "description": "Votre ancienne collègue vous a trahi et compte vous dénoncé pour fraude fiscale que faites vous ?",
+    "left-choice": "Vous allez en prison",
+    "right-choice": "Vous la menacez avec le disque dur compromettant",
+    "left-choice-result": {
+      "money": 0,
+      "reputation": 0,
+      "etat": 0,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 0,
+      "reputation": 0,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
+  },
+  {
+    "id": 23,
+    "title": "Le Crous",
+    "description": "Le Crous vous achete du materiel pour votre terrasse",
+    "left-choice": "Vous acceptez",
+    "right-choice": "Vous acceptez et vous le revendez",
+    "left-choice-result": {
+      "money": 0,
+      "reputation": 10,
+      "etat": 20,
+      "object": 0,
+      "ObjectQuantity": 0
+    },
+    "right-choice-result": {
+      "money": 7000,
+      "reputation": -10,
+      "etat": 0,
+      "object": 0,
+        "ObjectQuantity": 0
+    },
+    "left-choice-image": "The left choice image",
+    "right-choice-image": "The rght choice image"
   }
+
 ]
