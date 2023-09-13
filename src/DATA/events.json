@@ -8,14 +8,14 @@
     "left-choice-result": {
       "money": 100,
       "reputation": -10,
-      "etat": 0,
+      "state": 0,
       "object-id": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 10,
-      "etat": 0,
+      "state": 0,
       "object-id": 0,
         "ObjectQuantity": 0
     },
@@ -31,14 +31,14 @@
     "left-choice-result": {
       "money": 0,
       "reputation": 10,
-      "etat": 10,
+      "state": 10,
       "object": 0,
       "ObjectQuantity": 1
     },
     "right-choice-result": {
       "money": -250,
       "reputation": -10,
-      "etat": -10,
+      "state": -10,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -54,14 +54,14 @@
     "left-choice-result": {
       "money": -1000,
       "reputation": 10,
-      "etat": 10,
+      "state": 10,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 10,
-      "etat": 10,
+      "state": 10,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -77,14 +77,14 @@
     "left-choice-result": {
       "money": -300,
       "reputation": 0,
-      "etat": 20,
+      "state": 20,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 0,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -100,14 +100,14 @@
     "left-choice-result": {
       "money": -500,
       "reputation": -2,
-      "etat": -10,
+      "state": -10,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": -500,
       "reputation": 0,
-      "etat": -10,
+      "state": -10,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -123,14 +123,14 @@
     "left-choice-result": {
       "money": -1200,
       "reputation": 30,
-      "etat": -30,
+      "state": -30,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": -10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -146,14 +146,14 @@
     "left-choice-result": {
       "money": -125,
       "reputation": 10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": -10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -169,14 +169,14 @@
     "left-choice-result": {
       "money": 350,
       "reputation": 10,
-      "etat": 10,
+      "state": 10,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": -10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -192,14 +192,14 @@
     "left-choice-result": {
       "money": 0,
       "reputation": 30,
-      "etat": 0,
+      "state": 0,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -215,14 +215,14 @@
     "left-choice-result": {
       "money": 0,
       "reputation": 30,
-      "etat": 50,
+      "state": 50,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -238,14 +238,14 @@
     "left-choice-result": {
       "money": 0,
       "reputation": 10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": -10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -261,14 +261,14 @@
     "left-choice-result": {
       "money": 6700,
       "reputation": 10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 0,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -284,14 +284,14 @@
     "left-choice-result": {
       "money": -120,
       "reputation": 10,
-      "etat": 20,
+      "state": 20,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": -10,
-      "etat": -20,
+      "state": -20,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -307,14 +307,14 @@
     "left-choice-result": {
       "money": -120,
       "reputation": 10,
-      "etat": 20,
+      "state": 20,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": -10,
-      "etat": -20,
+      "state": -20,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -330,14 +330,14 @@
     "left-choice-result": {
       "money": -200,
       "reputation": -10,
-      "etat": 10,
+      "state": 10,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 10,
-      "etat": -10,
+      "state": -10,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -353,14 +353,14 @@
     "left-choice-result": {
       "money": 0,
       "reputation": 0,
-      "etat": 0,
+      "state": 0,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 14500,
       "reputation": 0,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -376,14 +376,14 @@
     "left-choice-result": {
       "money": -100,
       "reputation": -10,
-      "etat": 10,
+      "state": 10,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 14500,
       "reputation": 0,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -399,14 +399,14 @@
     "left-choice-result": {
       "money": -5000,
       "reputation": 20,
-      "etat": 0,
+      "state": 0,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 0,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -422,16 +422,16 @@
     "left-choice-result": {
       "money": 400,
       "reputation": -10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 400,
       "reputation": -10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
-        "ObjectQuantity": 0
+      "ObjectQuantity": 0
     },
     "left-choice-image": "The left choice image",
     "right-choice-image": "The rght choice image"
@@ -445,14 +445,14 @@
     "left-choice-result": {
       "money": 400,
       "reputation": -10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 400,
       "reputation": -10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -468,14 +468,14 @@
     "left-choice-result": {
       "money": 0,
       "reputation": -10,
-      "etat": 0,
-      "object": "Disque dur compromettant",
+      "state": 0,
+      "object": 7,
       "ObjectQuantity": 1
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -491,14 +491,14 @@
     "left-choice-result": {
       "money": 0,
       "reputation": 0,
-      "etat": 0,
+      "state": 0,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 0,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
@@ -514,14 +514,14 @@
     "left-choice-result": {
       "money": 0,
       "reputation": 10,
-      "etat": 20,
+      "state": 20,
       "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 7000,
       "reputation": -10,
-      "etat": 0,
+      "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },

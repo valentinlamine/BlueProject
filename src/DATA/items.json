@@ -1,9 +1,127 @@
 [
   {
-    "name": "Item's name",
-    "description": "Item's description",
-    "buyPrice": 100,
-    "sellPrice": 50,
-    "effects": 1
+    "id": 0,
+    "name": "Partenariat",
+    "description": "Vous avez un partenaire qui vous aide à faire des affaires.",
+    "achetable": false,
+    "buyPrice": 0,
+    "sellPrice": 0,
+    "money": 2000,
+    "reputation": 0,
+    "state": 0,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+    
+  },{
+    "id": 1,
+    "name": "Midi crepe de ta grand mere",
+    "description": "Vous organisez un midi crepe pour tout le monde !",
+    "achetable": true,
+    "buyPrice": 500,
+    "sellPrice": 200,
+    "money": 0,
+    "reputation": 20,
+    "state": 0,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  },{
+    "id": 2,
+    "name": "Affiche publicitaire",
+    "description": "Vous faites poser des affiches publicitaires dans la ville.",
+    "achetable": false,
+    "buyPrice": 0,
+    "sellPrice": 0,
+    "money": 800,
+    "reputation": 10,
+    "state": 0,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  },{
+    "id": 3,
+    "name": "Affiche publicitaire",
+    "description": "Vous faites poser des affiches publicitaires dans la ville.",
+    "achetable": false,
+    "buyPrice": 0,
+    "sellPrice": 0,
+    "money": 800,
+    "reputation": 10,
+    "state": 0,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  }
+  ,{
+    "id": 4,
+    "name": "Mastercard du siege",
+    "description": "Vous avez la mastercard du siege, vous évite la banqueroute !",
+    "achetable": true,
+    "buyPrice": 5000,
+    "sellPrice": 2000,
+    "money": 2500,
+    "reputation": 0,
+    "state": 0,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  },{
+    "id": 5,
+    "name": "NV1 - Babyfoot",
+    "description": "Vous installez un babyfoot dans votre école !",
+    "achetable": true,
+    "buyPrice": 1800,
+    "sellPrice": 800,
+    "money": 0,
+    "reputation": 10,
+    "state": 0,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  }
+  ,{
+    "id": 6,
+    "name": "NV2 - Billard",
+    "description": "Vous installez un billard dans votre école !",
+    "achetable": true,
+    "buyPrice": 1000,
+    "sellPrice": 800,
+    "money": 0,
+    "reputation": 20,
+    "state": 0,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  },{
+    "id": 7,
+    "name": "NV3 - Bornes d'arcade",
+    "description": "Vous installez des bornes d'arcade dans votre école !",
+    "achetable": true,
+    "buyPrice": 2000,
+    "sellPrice": 800,
+    "money": 0,
+    "reputation": 30,
+    "state": 0,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  }
+  ,{
+    "id": 8,
+    "name": "Certificat medical",
+    "description": "Vous permet d'éviter un event !",
+    "achetable": true,
+    "buyPrice": 750,
+    "sellPrice": 0,
+    "money": 0,
+    "reputation": 0,
+    "state": 0,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  },{
+    "id":9,
+    "name": "Disque dur compromettant",
+    "description": "Vous avez un disque dur compromettant sur plusieurs personnes !",
+    "achetable": false,
+    "buyPrice": 0,
+    "sellPrice": 0,
+    "money": 0,
+    "reputation": 0,
+    "state": 0,
+    "effects": 2,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
   }
 ]

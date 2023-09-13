@@ -5,10 +5,6 @@ import (
 	"net/http"
 )
 
-type Game struct {
-	Tmp string
-}
-
 func generateTemplate(templateName string, filepaths []string) *template.Template {
 	tmpl, err := template.New(templateName).ParseFiles(filepaths...)
 	// Error check:
@@ -19,11 +15,19 @@ func generateTemplate(templateName string, filepaths []string) *template.Templat
 }
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-	var game Game
-	tmpl := generateTemplate("index.html", []string{"frontend/index.html"})
-	game = Game{
-		Tmp: "test",
+	if r.Method == "POST" {
+		if r.FormValue("start") == "start" {
+			if r.FormValue("name") != "" {
+				tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
+				game := StartGame()
+				tmpl.Execute(w, game)
+			} else {
+				tmpl := generateTemplate("index.html", []string{"frontend/index.html"})
+				tmpl.Execute(w, nil)
+			}
+		}
+	} else {
+		tmpl := generateTemplate("index.html", []string{"frontend/index.html"})
+		tmpl.Execute(w, nil)
 	}
-
-	tmpl.Execute(w, game)
 }

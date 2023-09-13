@@ -6,52 +6,8 @@ import (
 	"log"
 	"math/rand"
 	"os"
+	"time"
 )
-
-// Game Original structure which contains all the others
-type Game struct {
-	PlayerInfo Player
-	AllEvents  []Evt
-	Items      []Item
-}
-
-// Item Struct Item
-type Item struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-	BuyPrice    int    `json:"buyPrice"`
-	SellPrice   int    `json:"sellPrice"`
-	Effect      int    `json:"effects"`
-}
-
-// Result Struct Result, mainly
-type Result struct {
-	Money          int `json:"money"`
-	Reputation     int `json:"reputation"`
-	Stat           int `json:"etat"`
-	ObjectId       int `json:"object-id"`
-	ObjectQuantity int `json:"ObjectQuantity"`
-}
-
-// Evt Struct event, which needs to be loaded from json
-type Evt struct {
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	LeftChoice  string `json:"left-choice"`
-	RightChoice string `json:"right-choice"`
-	LeftResult  Result `json:"left-choice-result"`
-	RightResult Result `json:"right-choice-result"`
-	LeftImage   string `json:"left-choice-image"`
-	RightImage  string `json:"right-choice-image"`
-}
-
-// Player Struct player, which needs to be loaded from json
-type Player struct {
-	Username   string
-	Reputation int
-	Budget     int
-	Inventory  []Item
-}
 
 // the array of unused events -> to make sure events appear only once
 var notmade []int
@@ -93,8 +49,9 @@ func PickEvent(events []Evt) Evt {
 		return Evt{}
 	}
 	i := rand.Intn(len(notmade))
+	ind := notmade[i]
 	notmade = Remove(notmade, i)
-	return events[i]
+	return events[ind]
 }
 
 // LoadItems Function which loads the array of items from a json file
@@ -116,5 +73,50 @@ func PrintItems(events []Item) {
 	}
 	for i, e := range events {
 		fmt.Printf("Item -%v : %+v\n", i+1, e)
+	}
+}
+
+// StartGame Function which initiates the data of the ntire game
+func StartGame() Game {
+	var g Game
+	g.Items = LoadItems("DATA/items.json")
+	g.AllEvents = EventShuffle(LoadEvents("DATA/events.json"))
+	return g
+}
+
+// EventShuffle Function which randomizes the event array
+func EventShuffle(events []Evt) []Evt {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(events),
+		func(i, j int) { events[i], events[j] = events[j], events[i] })
+	return events
+}
+
+// AddItem Function which adds the item from the index in the player inventory
+func (game *Game) AddItem(ind int) {
+	item := game.Items[ind]
+	game.PlayerInfo.Inventory = append(game.PlayerInfo.Inventory, item)
+}
+
+// ApplyChoice upate player from the choice of the event
+func (game *Game) ApplyChoice(choice int) {
+	var c Result
+	event := game.AllEvents[0]
+	if choice == 0 {
+		c = event.LeftResult
+	} else if choice == 1 {
+		c = event.RightResult
+	} else {
+		return
+	}
+	game.ApplyResult(c)
+}
+
+func (game *Game) ApplyResult(c Result) {
+	game.PlayerInfo.Budget += c.Money
+	game.PlayerInfo.Reputation += c.Reputation
+	game.PlayerInfo.State += c.State
+	if c.ObjectQuantity != 0 {
+		game.AddItem(c.ObjectId)
 	}
 }
