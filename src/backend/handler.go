@@ -24,5 +24,6 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 	game = Game{
 		Tmp: "test",
 	}
+
 	tmpl.Execute(w, game)
 }
