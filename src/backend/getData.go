@@ -80,6 +80,8 @@ func (game *Game) Following() {
 	var fe []Evt
 	var e []Evt = game.AllEvents
 
+	fe = append(fe, 21)
+
 }
 
 // AddItem Function which adds the item from the index in the player inventory

@@ -16,12 +16,14 @@ func generateTemplate(templateName string, filepaths []string) *template.Templat
 
 func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 	var p Player
-	if r.Method == "POST" {
+	if p.Username != "" {
+		tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
+		game := StartGame(p)
+		tmpl.Execute(w, game)
+	} else if r.Method == "POST" {
 		if r.FormValue("start") == "start" {
 			if r.FormValue("name") != "" {
-				tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
-				game := StartGame()
-				tmpl.Execute(w, game)
+				p.Username = r.FormValue("name")
 			} else {
 				tmpl := generateTemplate("index.html", []string{"frontend/index.html"})
 				tmpl.Execute(w, nil)
