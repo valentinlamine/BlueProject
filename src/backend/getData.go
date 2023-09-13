@@ -151,6 +151,8 @@ func (game *Game) ApplyResult(c Result) {
 }
 
 // AddEventadds the follow event
-func (game *Game) AddEvent() {
-	return
+func (game *Game) AddEvent(id int, choice int) Evt {
+	var event Evt
+
+	return event
 }

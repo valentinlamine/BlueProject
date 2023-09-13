@@ -1,0 +1,9 @@
+[
+    {
+        "image" : "link to image",
+        "name" : "name of the marchant",
+        "description" : "description of the marchant",
+        "id" : "id of the marchant",
+        "itemsToSell": [1,2,3,4]
+    }
+]
