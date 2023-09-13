@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-type Game struct {
+type TestGame struct {
 	Tmp string
 }
 
@@ -19,9 +19,9 @@ func generateTemplate(templateName string, filepaths []string) *template.Templat
 }
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-	var game Game
+	var game TestGame
 	tmpl := generateTemplate("index.html", []string{"frontend/index.html"})
-	game = Game{
+	game = TestGame{
 		Tmp: "test",
 	}
 
