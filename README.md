@@ -15,7 +15,7 @@
 - Mastercard du siege (évite la banqueroute)
 - nv1:babyfoot, nv2:billard, nv3:borne d'arcade
 - Certificat médical (évite un event)
-- disque dur compromettant (évite la prison)s
+- disque dur compromettant (évite la prison)
 
 ## Event
 - Le CVEC d'un eleve arrive dans votre budget par erreur:
