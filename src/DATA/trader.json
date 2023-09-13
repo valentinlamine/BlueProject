@@ -1,27 +1,27 @@
 [
     {
-        "id" : "1",
+        "id" : 1,
         "image" : "ASSETS/louche.png",
         "name" : "Marchant Louche",
         "description" : "Les objets y sont pas chers mais pas non plus tres fiable",
         "itemsToSell": [1,13,14]
     },
     {
-        "id" : "2",
+        "id" : 2,
         "image" : "ASSETS/basique.png",
         "name" : "Marchant Classique",
         "description" : "Les objets y sont à des prit correct et la qualité en est de même",
         "itemsToSell": [2,5,6,7]
     },
     {
-        "id" : "3",
+        "id" : 3,
         "image" : "ASSETS/luxe.png",
         "name" : "Marchant de Luxe",
         "description" : "Les objets y sont chers tres fiable mais.... pas tous tres utile",
         "itemsToSell": [4,10,11,12]
     },
     {
-        "id" : "4",
+        "id" : 4,
         "image" : "ASSETS/publicitaire.png",
         "name" : "Publicitaire",
         "description" : "Il vous fait de la pub pour un peu d'argent",

@@ -19,6 +19,8 @@ func main() {
 	r.HandleFunc("/", g.IndexHandler)
 
 	r.HandleFunc("/sell", g.SellHandler)
+	r.HandleFunc("/buy", g.BuyHandler)
+	r.HandleFunc("/use", g.UseHandler)
 	//r.HandleFunc("/buy", g.BuyHandler)
 	/*var player = backend.Player{
 		Username:   "truc",

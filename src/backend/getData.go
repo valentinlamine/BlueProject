@@ -57,15 +57,33 @@ func PrintItems(events []Item) {
 	}
 }
 
+func LoadMarchand(filename string, g Game) []Marchant {
+	f, _ := os.ReadFile(filename)
+	var e []Marchant
+	err := json.Unmarshal(f, &e)
+	if err != nil {
+		log.Fatal(err)
+	}
+	for i := 0; i != len(e); i++ {
+		for j := 0; j != len(e[i].ItemsId); j++ {
+			e[i].Items = append(e[i].Items, g.GetItemById(e[i].ItemsId[j]))
+		}
+	}
+	return e
+}
+
 // StartGame Function which initiates the data of the entire game
 func (g *Game) StartGame() Game {
+	g.Turn = 0
 	g.PlayerInfo.Reputation = 0
 	g.PlayerInfo.Budget = 20000
 	g.PlayerInfo.State = 50
 	g.Items = LoadItems("DATA/items.json")
+	g.AllMarchants = LoadMarchand("DATA/trader.json", *g)
+	g.MarchantTurn = 2 + (len(g.Items) / 3)
 	g.AllEvents = LoadEvents("DATA/events.json")
 	g.Following()
-	g.AllEvents = EventShuffle(g.AllEvents)
+	g.EventShuffle(g.AllEvents)
 	g.CurrentEvent = g.AllEvents[0]
 	g.Start = true
 	return *g
@@ -78,11 +96,17 @@ func (g *Game) ContinueGame() Game {
 }
 
 // EventShuffle Function which randomizes the event array
-func EventShuffle(events []Evt) []Evt {
+func (g *Game) EventShuffle(events []Evt) {
+	var tmp Evt
 	rand.Seed(time.Now().UnixNano())
 	rand.Shuffle(len(events),
 		func(i, j int) { events[i], events[j] = events[j], events[i] })
-	return events
+	for i := 1; i != len(events); i++ {
+		if i%g.MarchantTurn == 0 {
+			Insert(g.AllEvents, i, tmp)
+		}
+	}
+	g.AllEvents = events
 }
 
 // Remove Function which removes an element of an array
@@ -116,25 +140,55 @@ func (game *Game) AddItem(ind int) {
 }
 
 // BuyItem return 1 if buying is impossible an 0 if it is possible
-func (game *Game) BuyItem(ind int) int {
-	item := game.Items[ind]
-	if item.BuyPrice > game.PlayerInfo.Budget {
-		return 1
+func (game *Game) BuyItem(id int) (bool, string) {
+	for i := 0; i < len(game.PlayerInfo.Inventory); i++ {
+		if game.PlayerInfo.Inventory[i].Id == id {
+			return false, "Objet déjà possédé"
+		}
 	}
-	game.AddItem(ind)
+	item := game.Items[id]
+	if item.BuyPrice > game.PlayerInfo.Budget {
+		return false, "Pas assez d'argent"
+	}
+	game.AddItem(id)
 	game.PlayerInfo.Budget -= item.BuyPrice
-	return 0
+	return true, "item acheté"
 }
 
 // SellItem Removes the item and adds the money to the player
-func (game *Game) SellItem(ind int) {
-	item := game.Items[ind]
+func (game *Game) SellItem(id int) (bool, string) {
+	var b bool = false
+	for i := 0; i < len(game.PlayerInfo.Inventory); i++ {
+		if game.PlayerInfo.Inventory[i].Id == id {
+			b = true
+		}
+	}
+	if !b {
+		return false, "Item non possédé"
+	}
+	item := game.Items[id]
 	game.PlayerInfo.Budget += item.SellPrice
-	game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, ind)
+	game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, id)
+	return true, "item vendu"
 }
 
 // ApplyChoice select the choice from an int
 func (game *Game) ApplyChoice(choice int) int {
+	if game.CurrentEvent.Id == 21 {
+		var ind int
+		var b bool = false
+		for i := 0; i < len(game.PlayerInfo.Inventory); i++ {
+			if game.PlayerInfo.Inventory[i].Id == 9 {
+				ind = i
+				game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, ind)
+				b = true
+			}
+		}
+		if b && choice == 1 {
+			return 0
+		}
+		return 1
+	}
 	var c Result
 	event := game.CurrentEvent
 	if choice == 0 {
@@ -152,13 +206,17 @@ func (game *Game) ApplyResult(c Result) int {
 	game.PlayerInfo.Budget += c.Money
 	if game.PlayerInfo.Budget <= 0 {
 		var ind int
+		var b bool = false
 		for i := 0; i < len(game.PlayerInfo.Inventory); i++ {
 			if game.PlayerInfo.Inventory[i].Id == 4 {
 				ind = i
 				game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, ind)
+				b = true
 			}
 		}
-		return 1
+		if !b {
+			return 1
+		}
 	}
 	if game.PlayerInfo.Budget > 100 {
 		game.PlayerInfo.Budget = 100
@@ -225,10 +283,18 @@ func (game *Game) ManageEvent(choice int) int {
 }
 
 // UseItem Triggers the item effect and destroy it
-func (game *Game) UseItem(id int) int {
-	if id == 4 || id == 8 || id == 9 {
-		return 1
+func (game *Game) UseItem(id int) (bool, string) {
+	// ignoring the specials items
+	if id == 4 || id == 9 {
+		return false, "Item non consommable"
 	}
+
+	// skipping the current event with the item
+	if id == 8 {
+		game.ContinueGame()
+	}
+
+	// consumables
 	ind := 0
 	for i := 0; i < len(game.PlayerInfo.Inventory); i++ {
 		if game.PlayerInfo.Inventory[i].Id == id {
@@ -242,9 +308,10 @@ func (game *Game) UseItem(id int) int {
 
 	game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, ind)
 
-	return 0
+	return true, "item utilisé"
 }
 
+// TEST
 // Test gathers the functions in order to have a playable game in terminal
 func Test(player Player) {
 	var game Game
@@ -285,4 +352,13 @@ func Test(player Player) {
 			break
 		}
 	}
+}
+
+func (game *Game) GetItemById(id int) Item {
+	for _, item := range game.Items {
+		if item.Id == id {
+			return item
+		}
+	}
+	return Item{}
 }

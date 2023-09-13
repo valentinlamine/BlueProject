@@ -19,83 +19,19 @@
     <div class="inventory player">
         <h1>Inventaire du joueur</h1>
         <div class="item-list">
+            {{range $v := .PlayerInfo.Inventory}}
             <div class="inventory-item">
                 <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
+                    <img src="{{$v.Image}}" alt="{{$v.Name}}">
                     <div class="item-info">
-                        <h3>Item 1</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 1</p>
+                        <h3>{{$v.Name}}</h3>
+                        <h4>{{$v.SellPrice}}€</h4>
+                        <p>{{$v.Description}}</p>
                     </div>
+                    <button onclick="sellItem({{$v.Id}})">Utiliser</button>
                 </div>
-                <button onclick="sellItem(1)">Vendre</button>
             </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 2</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 2</p>
-                    </div>
-                </div>
-                <button onclick="sellItem(2)">Vendre</button>
-            </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 3</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 3</p>
-                    </div>
-                </div>
-                <button onclick="sellItem(3)">Vendre</button>
-            </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 4</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 4</p>
-                    </div>
-                </div>
-                <button onclick="sellItem(4)">Vendre</button>
-            </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 5</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 5</p>
-                    </div>
-                </div>
-                <button onclick="sellItem(5)">Vendre</button>
-            </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 6</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 6</p>
-                    </div>
-                </div>
-                <button onclick="sellItem(6)">Vendre</button>
-            </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 7</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 7</p>
-                    </div>
-                </div>
-                <button onclick="sellItem(7)">Vendre</button>
-            </div>
+            {{end}}
         </div>
     </div>
     <div class="bg-image">
@@ -103,7 +39,7 @@
     </div>
     <div class="bg-text">
         <div class="left">
-            <h1>Bienvenue chez {{nomdumarchand}}</h1>
+            <h1>Bienvenue chez {{.CurrentMarchant.Name}}</h1>
             <p>
                 Ici vous pourrez acheter des items pour améliorer votre école.
             </p>
@@ -117,76 +53,23 @@
     <div class="inventory marchand">
         <h1 style="text-align: right">Inventaire du marchand</h1>
         <div class="item-list">
+            {{range $y := .CurrentMarchant.Items}}
             <div class="inventory-item">
                 <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
+                    <img src="{{$y.Image}}" alt="Item">
                     <div class="item-info">
-                        <h3>Item 1</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 1</p>
+                        <h3>{{$y.Name}}</h3>
+                        <h4>{{$y.BuyPrice}}€</h4>
+                        <p>{{$y.Description}}</p>
                     </div>
                 </div>
-                <button onclick="buyItem(10)">Acheter</button>
+                <button onclick="buyItem({{$y.Id}})">Acheter</button>
             </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 2</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 2</p>
-                    </div>
-                </div>
-                <button onclick="buyItem(11)">Acheter</button>
-            </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 3</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 3</p>
-                    </div>
-                </div>
-                <button onclick="buyItem(12)">Acheter</button>
-            </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 4</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 4</p>
-                    </div>
-                </div>
-                <button onclick="buyItem(13)">Acheter</button>
-            </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 5</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 5</p>
-                    </div>
-                </div>
-                <button onclick="buyItem(14)">Acheter</button>
-            </div>
-            <div class="inventory-item">
-                <div class="left">
-                    <img src="ASSETS/default.jpg" alt="Item">
-                    <div class="item-info">
-                        <h3>Item 6</h3>
-                        <h4>100€</h4>
-                        <p>Description de l'item 6</p>
-                    </div>
-                </div>
-                <button onclick="buyItem(15)">Acheter</button>
-            </div>
+            {{end}}
         </div>
     </div>
     <script>
-        function sellItem(id) {
+        function sellItem(div, id) {
             fetch("/sell", {
                 method: 'POST',
                 headers: {
@@ -198,14 +81,20 @@
             })
             .then(response => response.text())
             .then(data => {
-                console.log(data);
+                data = JSON.parse(data);
+                if (data.success) {
+                    alert("Vente effectuée !");
+                    div.parentElement.remove();
+                } else {
+                    alert(data.info);
+                }
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
         }
 
-        function buyItem(id) {
+        function buyItem(div, id) {
             fetch("/buy", {
                 method: 'POST',
                 headers: {
@@ -217,7 +106,13 @@
             })
             .then(response => response.text())
             .then(data => {
-                console.log(data);
+                data = JSON.parse(data);
+                if (data.success) {
+                    alert("Achat effectué !");
+                    div.parentElement.remove();
+                } else {
+                    alert(data.info);
+                }
             })
             .catch((error) => {
                 console.error('Error:', error);

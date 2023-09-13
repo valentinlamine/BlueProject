@@ -8,11 +8,11 @@ html {
     font-family: Montserrat,Helvetica,Arial,sans-serif;
 }
   
-  * {
+* {
     box-sizing: border-box;
     font-family: 'Minecraftia', sans-serif;
     overflow: hidden;
-  }
+}
 
 .inventory {
   position: fixed;

@@ -2,12 +2,16 @@ package backend
 
 // Game Original structure which contains all the others
 type Game struct {
-	PlayerInfo   Player
-	AllEvents    []Evt
-	FollowEvents []Evt
-	CurrentEvent Evt
-	Items        []Item
-	Start bool
+	PlayerInfo      Player
+	AllEvents       []Evt
+	FollowEvents    []Evt
+	CurrentMarchant Marchant
+	AllMarchants    []Marchant
+	CurrentEvent    Evt
+	Items           []Item
+	MarchantTurn    int
+	Turn            int
+	Start           bool
 }
 
 // Item Struct Item
@@ -53,4 +57,13 @@ type Player struct {
 	State      int
 	Budget     int
 	Inventory  []Item
+}
+
+type Marchant struct {
+	Id          int    `json:"id"`
+	Image       string `json:"image"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	ItemsId     []int  `json:"itemsToSell"`
+	Items       []Item
 }
