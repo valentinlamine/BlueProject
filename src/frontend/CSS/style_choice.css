@@ -90,42 +90,80 @@ body, html {
 }
 
 .inventory .inventory-item {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10px;
-  height: 100px;
-  width: 100%;
-  overflow: hidden;
-  background: #23b2a4;
-  border-radius: 10px;
-  border: 2px solid #23b2a4;
-}
-
-.inventory-item img {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
-  filter: blur(0);
-  -webkit-filter: blur(0);
-  opacity: 1;
-  margin-right: 20px;
-}
-
-.inventory-item h3 {
-  margin: 10px 0;
-  padding: 0;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.inventory-item p {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-}
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    background: #23b2a4;
+    border-radius: 10px;
+    border: 2px solid #23b2a4;
+    transition: all 0.5s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .inventory-item .left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .inventory-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    opacity: 1;
+    margin-right: 20px;
+  }
+  
+  .inventory-item h3 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .inventory-item h4 {
+      margin: 5px 0 10px 0;
+      padding: 0;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+  }
+  
+  .inventory-item p {
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      font-size: 14px;
+      font-weight: lighter;
+  }
+  
+  .inventory-item button {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      color: black;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      border-radius: 20px;
+      cursor: pointer;
+      height: 50px;
+  }
+  
+  .inventory-item button:hover {
+      background-color: rgba(255, 255, 255, 1);
+      color: #23b2a4;
+  }
 
 .header-left {
   padding: 10px 20px;

@@ -151,12 +151,25 @@ func (game *Game) ApplyChoice(choice int) int {
 func (game *Game) ApplyResult(c Result) int {
 	game.PlayerInfo.Budget += c.Money
 	if game.PlayerInfo.Budget <= 0 {
+		var ind int
+		for i := 0; i < len(game.PlayerInfo.Inventory); i++ {
+			if game.PlayerInfo.Inventory[i].Id == 4 {
+				ind = i
+				game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, ind)
+			}
+		}
 		return 1
+	}
+	if game.PlayerInfo.Budget > 100 {
+		game.PlayerInfo.Budget = 100
 	}
 	game.PlayerInfo.Reputation += c.Reputation
 	game.PlayerInfo.State += c.State
 	if game.PlayerInfo.State <= 0 {
 		return 1
+	}
+	if game.PlayerInfo.State > 100 {
+		game.PlayerInfo.State = 100
 	}
 	if c.ObjectQuantity != 0 {
 		game.AddItem(c.ObjectId)
