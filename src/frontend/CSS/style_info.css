@@ -1,23 +1,12 @@
-/* Pour ordinatuer */
-@font-face {
-  font-family: 'Minecraftia';
-  src: url('../police/MinecraftiaRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  }
-
-  @font-face {
-  font-family: 'Minecraft_enchanted';
-  src: url('../police/minecraft-enchantment.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  }
-  
 body, html {
     height: 100%;
     margin: 0;
     padding: 0;
   }
+
+html {
+    font-family: Montserrat,Helvetica,Arial,sans-serif;
+}
   
   * {
     box-sizing: border-box;
