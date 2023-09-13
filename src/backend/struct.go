@@ -2,9 +2,11 @@ package backend
 
 // Game Original structure which contains all the others
 type Game struct {
-	PlayerInfo Player
-	AllEvents  []Evt
-	Items      []Item
+	PlayerInfo   Player
+	AllEvents    []Evt
+	FollowEvents []Evt
+	CurrentEvent Evt
+	Items        []Item
 }
 
 // Item Struct Item

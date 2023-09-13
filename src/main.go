@@ -18,8 +18,6 @@ func main() {
 	r.PathPrefix("/JS/").Handler(http.StripPrefix("/JS/", http.FileServer(http.Dir("./frontend/JS")))) //handle routing
 	r.HandleFunc("/", g.IndexHandler)
 
-	g.AllEvents = backend.LoadEvents("DATA/events.json")
-
 	fmt.Println("server is running on port 8080 : http://localhost:8080")
 	if err := http.ListenAndServe(":8080", r); err != nil {
 		log.Fatal(err)

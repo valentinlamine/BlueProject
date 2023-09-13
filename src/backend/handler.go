@@ -1,7 +1,6 @@
 package backend
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -16,17 +15,15 @@ func generateTemplate(templateName string, filepaths []string) *template.Templat
 }
 
 func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
-	var p Player
-	if p.Username != "" {
-		fmt.Println("gné")
+	if g.PlayerInfo.Username != "" {
 		tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
-		game := StartGame(p)
+		game := g.ContinueGame()
 		tmpl.Execute(w, game)
 	} else if r.Method == "POST" {
 		if r.FormValue("name") != "" {
-			p.Username = r.FormValue("name")
+			g.PlayerInfo.Username = r.FormValue("name")
 			tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
-			game := StartGame(p)
+			game := g.StartGame(g.PlayerInfo)
 			tmpl.Execute(w, game)
 		} else {
 			tmpl := generateTemplate("index.html", []string{"frontend/index.html"})

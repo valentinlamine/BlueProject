@@ -19,8 +19,8 @@
       "object-id": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "ASSETS/guy-in-corporate-suit-swimming-in-money.gif",
-    "right-choice-image": "The right choice image"
+    "left-choice-image": "ASSETS/money.gif",
+    "right-choice-image": "ASSETS/terrasse.jpg"
   },
   {
     "id": 2,
@@ -42,8 +42,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The right choice image"
+    "left-choice-image": "ASSETS/microOnde.jpg",
+    "right-choice-image": "ASSETS/wifi.jpg"
   },
   {
     "id": 3,
@@ -65,8 +65,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/reseau.jpg",
+    "right-choice-image": "ASSETS/microOnde.jpg"
   },
   {
     "id": 4,
@@ -88,8 +88,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/serrure.jpg",
+    "right-choice-image": "ASSTES/porte.jpg"
   },
   {
     "id": 5,
@@ -111,8 +111,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/cry_nice.jpg",
+    "right-choice-image": "ASSETS/cry_nice.jpg"
   },
   {
     "id": 6,
@@ -134,8 +134,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/BDE.gif",
+    "right-choice-image": "ASSETS/noBDE.jpg"
   },
   {
     "id": 7,
@@ -157,8 +157,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/project.jpg",
+    "right-choice-image": "ASSETS/noproject.jpg"
   },
   {
     "id": 8,
@@ -180,8 +180,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/project.jpg",
+    "right-choice-image": "ASSETS/noproject.jpg"
   },
   {
     "id": 9,
@@ -203,8 +203,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/multiprise.jpg",
+    "right-choice-image": "ASSETS/noproject.jpg"
   },
   {
     "id": 10,
@@ -226,15 +226,15 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/give_money.jpg",
+    "right-choice-image": "ASSETS/faillite.jpeg"
   },
   {
     "id": 11,
     "title": "Extranet",
     "description": "Un eleve a un probleme d'accés a l'extranet, que faites vous ?",
     "left-choice": "Vous l'aidez",
-    "right-choice": "Vous ne l'aidez pas",
+    "right-choice": "Vous le bloquez",
     "left-choice-result": {
       "money": 0,
       "reputation": 10,
@@ -249,13 +249,13 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/help.png",
+    "right-choice-image": "ASSETS/blocked.jpg"
   },
   {
     "id": 12,
     "title": "La Campagne",
-    "description": "Les eleves de market/comm vous propose de faire une campagne de communicatin dans des lycées gratuitement, que faites vous ?",
+    "description": "Les eleves de market/comm vous propose de faire une campagne de communication dans des lycées gratuitement, que faites vous ?",
     "left-choice": "Vous acceptez",
     "right-choice": "Vous refusez",
     "left-choice-result": {
@@ -272,8 +272,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/pub.jpg",
+    "right-choice-image": "ASSETS/no_pub.jpg"
   },
   {
     "id": 13,
@@ -295,8 +295,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/anti_cafard.jpeg",
+    "right-choice-image": "ASSETS/cafard.jpg"
   },
   {
     "id": 14,

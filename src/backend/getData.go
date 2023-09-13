@@ -32,11 +32,6 @@ func PrintEvents(events []Evt) {
 	}
 }
 
-// Remove Function which removes an element of an array
-func Remove(slice []Evt, i int) []Evt {
-	return append(slice[:i], slice[i+1:]...)
-}
-
 // LoadItems Function which loads the array of items from a json file
 func LoadItems(filename string) []Item {
 	f, _ := os.ReadFile(filename)
@@ -60,12 +55,20 @@ func PrintItems(events []Item) {
 }
 
 // StartGame Function which initiates the data of the ntire game
-func StartGame(player Player) Game {
-	var g Game
+func (g *Game) StartGame(player Player) Game {
 	g.PlayerInfo = player
 	g.Items = LoadItems("DATA/items.json")
-	g.AllEvents = EventShuffle(LoadEvents("DATA/events.json"))
-	return g
+	g.AllEvents = LoadEvents("DATA/events.json")
+	g.Following()
+	g.AllEvents = EventShuffle(g.AllEvents)
+	g.CurrentEvent = g.AllEvents[0]
+	return *g
+}
+
+func (g *Game) ContinueGame() Game {
+	g.AllEvents = g.AllEvents[1:]
+	g.CurrentEvent = g.AllEvents[0]
+	return *g
 }
 
 // EventShuffle Function which randomizes the event array
@@ -76,25 +79,51 @@ func EventShuffle(events []Evt) []Evt {
 	return events
 }
 
-func (game *Game) Following() {
-	var fe []Evt
-	var e []Evt = game.AllEvents
+// Remove Function which removes an element of an array
+func Remove(slice []Evt, i int) []Evt {
+	return append(slice[:i], slice[i+1:]...)
+}
 
-	fe = append(fe, e[21])
-	fe = append(fe, e[9])
-	fe = append(fe, e[4])
-	fe = append(fe, e[2])
+// Remove Function which removes an element of an array
+func RemoveItem(slice []Item, i int) []Item {
+	return append(slice[:i], slice[i+1:]...)
+}
 
-	Remove(e, 21)
-	Remove(e, 9)
-	Remove(e, 4)
-	Remove(e, 2)
+// Following separates events with conditons and normal events
+func (g *Game) Following() {
+	g.FollowEvents = append(g.FollowEvents, g.AllEvents[21], g.AllEvents[9], g.AllEvents[4], g.AllEvents[2])
+	g.AllEvents = Remove(g.AllEvents, 21)
+	g.AllEvents = Remove(g.AllEvents, 9)
+	g.AllEvents = Remove(g.AllEvents, 4)
+	g.AllEvents = Remove(g.AllEvents, 2)
+
+	fmt.Println("\n----------------")
+	for i := 0; i != len(g.AllEvents); i++ {
+		fmt.Print("id:", g.AllEvents[i].Id, " ")
+	}
 }
 
 // AddItem Function which adds the item from the index in the player inventory
 func (game *Game) AddItem(ind int) {
 	item := game.Items[ind]
 	game.PlayerInfo.Inventory = append(game.PlayerInfo.Inventory, item)
+}
+
+// BuyItem return 1 if buying is impossible an 0 if it is possible
+func (game *Game) BuyItem(ind int) int {
+	item := game.Items[ind]
+	if item.BuyPrice > game.PlayerInfo.Budget {
+		return 1
+	}
+	game.AddItem(ind)
+	game.PlayerInfo.Budget -= item.BuyPrice
+	return 0
+}
+
+// SellItem
+func (game *Game) SellItem(ind int) {
+	item := game.Items[ind]
+	game.PlayerInfo.Budget += item.SellPrice
 }
 
 // ApplyChoice select the choice from an int
@@ -119,4 +148,9 @@ func (game *Game) ApplyResult(c Result) {
 	if c.ObjectQuantity != 0 {
 		game.AddItem(c.ObjectId)
 	}
+}
+
+// AddEventadds the follow event
+func (game *Game) AddEvent() {
+	return
 }
