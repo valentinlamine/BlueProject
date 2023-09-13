@@ -10,7 +10,7 @@
     "reputation": 0,
     "state": 0,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/partenariat.jpg"
     
   },{
     "id": 2,
@@ -23,7 +23,7 @@
     "reputation": 20,
     "state": 0,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/crepe.png"
   },
   {
     "id": 3,
@@ -36,7 +36,7 @@
     "reputation": 10,
     "state": 0,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/publicite.jpg"
   }
   ,{
     "id": 4,
@@ -49,7 +49,7 @@
     "reputation": 0,
     "state": 0,
     "effects": 1,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/cb.jpeg"
   },{
     "id": 5,
     "name": "Babyfoot",
@@ -61,7 +61,7 @@
     "reputation": 10,
     "state": 0,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/babyfoot.jpg"
   }
   ,{
     "id": 6,
@@ -74,7 +74,7 @@
     "reputation": 20,
     "state": 0,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/billard.jpg"
   },{
     "id": 7,
     "name": "Bornes d'arcade",
@@ -86,7 +86,7 @@
     "reputation": 30,
     "state": 0,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/arcade.png"
   }
   ,{
     "id": 8,
@@ -99,7 +99,7 @@
     "reputation": 0,
     "state": 0,
     "effects": 2,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/medic.jpg"
   },{
     "id":9,
     "name": "Disque dur compromettant",
@@ -111,7 +111,7 @@
     "reputation": 0,
     "state": 0,
     "effects": 3,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/dde.jpeg"
   },{
     "id":10,
     "name": "Un Mug à l'effigie du directeur",
@@ -123,7 +123,7 @@
     "reputation": 0,
     "state": 2,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/mug.jpg"
   },{
     "id":11,
     "name": "Un Tableau du directeur",
@@ -135,7 +135,7 @@
     "reputation": 0,
     "state": 2,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/tableau.jpg"
   },{
     "id":12,
     "name": "Une statue du directeur",
@@ -147,7 +147,7 @@
     "reputation": 0,
     "state": 4,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/statue.jpg"
   },{
     "id":13,
     "name": "un ticket de loto déja gratté",
@@ -159,7 +159,7 @@
     "reputation": 0,
     "state": 0,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/loto.jpg"
   }
   ,{
     "id":14,
@@ -172,7 +172,7 @@
     "reputation": 0,
     "state": 0,
     "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
+    "image": "ASSETS/cacahuetes.png"
   }
 
 ]

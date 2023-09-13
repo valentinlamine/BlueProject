@@ -223,9 +223,9 @@ func (game *Game) UseItem(id int) int {
 		}
 	}
 	item := game.PlayerInfo.Inventory[ind]
-	game.PlayerInfo.Budget = item.Money
-	game.PlayerInfo.Reputation = item.Reputation
-	game.PlayerInfo.State = item.State
+	game.PlayerInfo.Budget += item.Money
+	game.PlayerInfo.Reputation += item.Reputation
+	game.PlayerInfo.State += item.State
 
 	game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, ind)
 

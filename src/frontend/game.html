@@ -8,9 +8,6 @@
     <title>Admin Simulator</title>
 </head>
 <body>
-    {{range $v := .AllEvents}}
-    {{$v.Id}}
-    {{end}}
     <div class="header-left">
         <h1>{{.PlayerInfo.Username}}</h1>
         <h2>Budget : {{.PlayerInfo.Budget}}€</h2>
@@ -27,14 +24,19 @@
     </div>
     <div class="inventory-ctn hidden">
         <div class="inventory">
+            {{range $v := .PlayerInfo.Inventory}}
             <div class="inventory-item">
-                <img src="/ASSETS/default.jpg" alt="Item">
-                <div class="item-info">
-                    <h3>Item 1</h3>
-                    <p>Description de l'item 1</p>
+                <div class="left">
+                    <img src="{{$v.Image}}" alt="{{$v.Name}}">
+                    <div class="item-info">
+                        <h3>{{$v.Name}}</h3>
+                        <h4>{{$v.SellPrice}}€</h4>
+                        <p>{{$v.Description}}</p>
+                    </div>
                 </div>
+                <button onclick="sellItem(1)">Vendre</button>
             </div>
-
+            {{end}}
         </div>
     </div>
         <div class="left_choice" >

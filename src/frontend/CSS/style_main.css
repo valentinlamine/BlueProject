@@ -194,6 +194,46 @@ h1 {
     font-weight: lighter;
 }
 
+
+
+.question-ctn {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.question .radio-ctn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin: 10px;
+}
+
+.question .radio-ctn label {
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+}
+
+.question .radio-ctn input:checked + label {
+    color: #23b2a4;
+}
+
+
+
+
+
 /* Pour mobile */
 @media screen and (max-width: 600px) {
     .bg-text {
