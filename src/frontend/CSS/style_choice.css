@@ -167,6 +167,11 @@ body, html {
   border-radius: 0 0 0 20px;
 }
 
+form {
+  width: 100vw;
+  height: 100vh;
+}
+
 .left_choice {
   float: left;
   position : relative;

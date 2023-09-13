@@ -1,20 +1,20 @@
 [
   {
-    "id": 0,
+    "id": 1,
     "name": "Partenariat",
     "description": "Vous avez un partenaire qui vous aide à faire des affaires.",
-    "achetable": false,
-    "buyPrice": 0,
+    "achetable": true,
+    "buyPrice": 1000,
     "sellPrice": 0,
-    "money": 2000,
+    "money": 100,
     "reputation": 0,
     "state": 0,
     "effects": 0,
     "image": "https://i.imgur.com/5QZ6X6u.png"
     
   },{
-    "id": 1,
-    "name": "Midi crepe de ta grand mere",
+    "id": 2,
+    "name": "Midi crepe",
     "description": "Vous organisez un midi crepe pour tout le monde !",
     "achetable": true,
     "buyPrice": 500,
@@ -24,19 +24,8 @@
     "state": 0,
     "effects": 0,
     "image": "https://i.imgur.com/5QZ6X6u.png"
-  },{
-    "id": 2,
-    "name": "Affiche publicitaire",
-    "description": "Vous faites poser des affiches publicitaires dans la ville.",
-    "achetable": false,
-    "buyPrice": 0,
-    "sellPrice": 0,
-    "money": 800,
-    "reputation": 10,
-    "state": 0,
-    "effects": 0,
-    "image": "https://i.imgur.com/5QZ6X6u.png"
-  },{
+  },
+  {
     "id": 3,
     "name": "Affiche publicitaire",
     "description": "Vous faites poser des affiches publicitaires dans la ville.",
@@ -59,14 +48,14 @@
     "money": 2500,
     "reputation": 0,
     "state": 0,
-    "effects": 0,
+    "effects": 1,
     "image": "https://i.imgur.com/5QZ6X6u.png"
   },{
     "id": 5,
-    "name": "NV1 - Babyfoot",
+    "name": "Babyfoot",
     "description": "Vous installez un babyfoot dans votre école !",
     "achetable": true,
-    "buyPrice": 1800,
+    "buyPrice": 1200,
     "sellPrice": 800,
     "money": 0,
     "reputation": 10,
@@ -76,10 +65,10 @@
   }
   ,{
     "id": 6,
-    "name": "NV2 - Billard",
+    "name": "Billard",
     "description": "Vous installez un billard dans votre école !",
     "achetable": true,
-    "buyPrice": 1000,
+    "buyPrice": 1800,
     "sellPrice": 800,
     "money": 0,
     "reputation": 20,
@@ -88,7 +77,7 @@
     "image": "https://i.imgur.com/5QZ6X6u.png"
   },{
     "id": 7,
-    "name": "NV3 - Bornes d'arcade",
+    "name": "Bornes d'arcade",
     "description": "Vous installez des bornes d'arcade dans votre école !",
     "achetable": true,
     "buyPrice": 2000,
@@ -103,13 +92,13 @@
     "id": 8,
     "name": "Certificat medical",
     "description": "Vous permet d'éviter un event !",
-    "achetable": true,
-    "buyPrice": 750,
+    "achetable": false,
+    "buyPrice": 0,
     "sellPrice": 0,
     "money": 0,
     "reputation": 0,
     "state": 0,
-    "effects": 0,
+    "effects": 2,
     "image": "https://i.imgur.com/5QZ6X6u.png"
   },{
     "id":9,
@@ -121,7 +110,69 @@
     "money": 0,
     "reputation": 0,
     "state": 0,
-    "effects": 2,
+    "effects": 3,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  },{
+    "id":10,
+    "name": "Un Mug à l'effigie du directeur",
+    "description": "C'est un Mug à l'effigie du directeur recouvert d'or",
+    "achetable": true,
+    "buyPrice": 4500,
+    "sellPrice": 200,
+    "money": 0,
+    "reputation": 0,
+    "state": 2,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  },{
+    "id":11,
+    "name": "Un Tableau du directeur",
+    "description": "C'est un tableau du directeur",
+    "achetable": true,
+    "buyPrice": 6500,
+    "sellPrice": 500,
+    "money": 0,
+    "reputation": 0,
+    "state": 2,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  },{
+    "id":12,
+    "name": "Une statue du directeur",
+    "description": "C'est une statue du directeur",
+    "achetable": true,
+    "buyPrice": 8500,
+    "sellPrice": 1000,
+    "money": 0,
+    "reputation": 0,
+    "state": 4,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  },{
+    "id":13,
+    "name": "un ticket de loto déja gratté",
+    "description": "C'est un ticket déja gratté",
+    "achetable": true,
+    "buyPrice": 20,
+    "sellPrice": 0,
+    "money": 500,
+    "reputation": 0,
+    "state": 0,
+    "effects": 0,
     "image": "https://i.imgur.com/5QZ6X6u.png"
   }
+  ,{
+    "id":14,
+    "name": "Des cacahuetes",
+    "description": "Des cacahuetes dans un gobelet en plastique",
+    "achetable": true,
+    "buyPrice": 200,
+    "sellPrice": 0,
+    "money": 0,
+    "reputation": 0,
+    "state": 0,
+    "effects": 0,
+    "image": "https://i.imgur.com/5QZ6X6u.png"
+  }
+
 ]

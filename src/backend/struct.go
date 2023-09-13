@@ -7,6 +7,7 @@ type Game struct {
 	FollowEvents []Evt
 	CurrentEvent Evt
 	Items        []Item
+	Start bool
 }
 
 // Item Struct Item
@@ -16,7 +17,11 @@ type Item struct {
 	Description string `json:"description"`
 	BuyPrice    int    `json:"buyPrice"`
 	SellPrice   int    `json:"sellPrice"`
-	Effect      int    `json:"effects"`
+	Buyable     bool   `json:"achetable"`
+	Money       int    `json:"money"`
+	Reputation  int    `json:"reputation"`
+	State       int    `json:"state"`
+	Image       string `json:"image"`
 }
 
 // Result Struct Result, mainly

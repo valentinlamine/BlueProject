@@ -89,7 +89,7 @@
         "ObjectQuantity": 0
     },
     "left-choice-image": "ASSETS/serrure.jpg",
-    "right-choice-image": "ASSTES/porte.jpg"
+    "right-choice-image": "ASSETS/porte.jpg"
   },
   {
     "id": 5,
@@ -296,7 +296,7 @@
         "ObjectQuantity": 0
     },
     "left-choice-image": "ASSETS/anti_cafard.jpeg",
-    "right-choice-image": "ASSETS/cafard.jpg"
+    "right-choice-image": "ASSETS/zouinzouinzouin.jpg"
   },
   {
     "id": 14,
@@ -318,8 +318,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/depannage.jpg",
+    "right-choice-image": "ASSETS/hs.jpg"
   },
   {
     "id": 15,
@@ -341,8 +341,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/art.jpg",
+    "right-choice-image": "ASSETS/no_art.jpg"
   },
   {
     "id": 16,
@@ -364,8 +364,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/declaration.jpg",
+    "right-choice-image": "ASSETS/no_declaration.jpeg"
   },
   {
     "id": 17,
@@ -381,14 +381,14 @@
       "ObjectQuantity": 0
     },
     "right-choice-result": {
-      "money": 14500,
+      "money": 0,
       "reputation": 0,
       "state": 0,
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/tri.jpg",
+    "right-choice-image": "ASSETS/no_tri.png"
   },
   {
     "id": 18,
@@ -410,8 +410,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/impot.jpg",
+    "right-choice-image": "ASSETS/no_declaration.jpeg"
   },
   {
     "id": 19,
@@ -433,34 +433,11 @@
       "object": 0,
       "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/collegue.jpg",
+    "right-choice-image": "ASSETS/formateur.jpeg"
   },
   {
     "id": 20,
-    "title": "restriction budgetaire",
-    "description": "Pour économiser de l'argent vous devez virer une personne de l'école, qui choisissez vous ?",
-    "left-choice": "Vous virez un intervenant",
-    "right-choice": "Vous virez votre collègue",
-    "left-choice-result": {
-      "money": 400,
-      "reputation": -10,
-      "state": 0,
-      "object": 0,
-      "ObjectQuantity": 0
-    },
-    "right-choice-result": {
-      "money": 400,
-      "reputation": -10,
-      "state": 0,
-      "object": 0,
-        "ObjectQuantity": 0
-    },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
-  },
-  {
-    "id": 21,
     "title": "Les Disque Dur",
     "description": "Une personne oublie un disque dur dans votre école que faites vous ?",
     "left-choice": "Vous le gardez",
@@ -479,11 +456,11 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/recup.jpeg",
+    "right-choice-image": "ASSETS/don.jpg"
   },
   {
-    "id": 22,
+    "id": 21,
     "title": "Trahison",
     "description": "Votre ancienne collègue vous a trahi et compte vous dénoncé pour fraude fiscale que faites vous ?",
     "left-choice": "Vous allez en prison",
@@ -502,11 +479,11 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/prison.jpg",
+    "right-choice-image": "ASSETS/menace.jpg"
   },
   {
-    "id": 23,
+    "id": 22,
     "title": "Le Crous",
     "description": "Le Crous vous achete du materiel pour votre terrasse",
     "left-choice": "Vous acceptez",
@@ -525,8 +502,8 @@
       "object": 0,
         "ObjectQuantity": 0
     },
-    "left-choice-image": "The left choice image",
-    "right-choice-image": "The rght choice image"
+    "left-choice-image": "ASSETS/menace.jpg",
+    "right-choice-image": "ASSETS/lbc.png"
   }
 
 ]

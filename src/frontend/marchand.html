@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style_marchand.css">
+    <title>Admin Simulator</title>
+</head>
+<body>
+    <div class="header-left">
+        <h1>Pseudo</h1>
+        <h2>Budget : 1000€</h2>
+    </div>
+    <div class="header-right">
+        <h1>Réputation : 100%</h1>
+        <h2>État école : 100%</h2>
+    </div>
+    <div class="inventory player">
+        <h1>Inventaire du joueur</h1>
+        <div class="item-list">
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 1</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 1</p>
+                    </div>
+                </div>
+                <button onclick="sellItem(1)">Vendre</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 2</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 2</p>
+                    </div>
+                </div>
+                <button onclick="sellItem(2)">Vendre</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 3</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 3</p>
+                    </div>
+                </div>
+                <button onclick="sellItem(3)">Vendre</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 4</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 4</p>
+                    </div>
+                </div>
+                <button onclick="sellItem(4)">Vendre</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 5</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 5</p>
+                    </div>
+                </div>
+                <button onclick="sellItem(5)">Vendre</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 6</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 6</p>
+                    </div>
+                </div>
+                <button onclick="sellItem(6)">Vendre</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 7</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 7</p>
+                    </div>
+                </div>
+                <button onclick="sellItem(7)">Vendre</button>
+            </div>
+        </div>
+    </div>
+    <div class="bg-image">
+        <img src="/ASSETS/ynov_final.png" alt="a background blurred picture">
+    </div>
+    <div class="bg-text">
+        <div class="left">
+            <h1>Bienvenue chez {{nomdumarchand}}</h1>
+            <p>
+                Ici vous pourrez acheter des items pour améliorer votre école.
+            </p>
+        </div>
+        <div class="right">
+            <img src="/ASSETS/default.jpg" alt="Item">
+            <button>Quitter le marchand !</button>
+        </div>
+
+    </div>
+    <div class="inventory marchand">
+        <h1 style="text-align: right">Inventaire du marchand</h1>
+        <div class="item-list">
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 1</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 1</p>
+                    </div>
+                </div>
+                <button onclick="buyItem(10)">Acheter</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 2</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 2</p>
+                    </div>
+                </div>
+                <button onclick="buyItem(11)">Acheter</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 3</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 3</p>
+                    </div>
+                </div>
+                <button onclick="buyItem(12)">Acheter</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 4</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 4</p>
+                    </div>
+                </div>
+                <button onclick="buyItem(13)">Acheter</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 5</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 5</p>
+                    </div>
+                </div>
+                <button onclick="buyItem(14)">Acheter</button>
+            </div>
+            <div class="inventory-item">
+                <div class="left">
+                    <img src="ASSETS/default.jpg" alt="Item">
+                    <div class="item-info">
+                        <h3>Item 6</h3>
+                        <h4>100€</h4>
+                        <p>Description de l'item 6</p>
+                    </div>
+                </div>
+                <button onclick="buyItem(15)">Acheter</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function sellItem(id) {
+            fetch("/sell", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: id
+                })
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+        function buyItem(id) {
+            fetch("/buy", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: id
+                })
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

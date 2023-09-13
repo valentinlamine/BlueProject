@@ -34,95 +34,25 @@
                     <p>Description de l'item 1</p>
                 </div>
             </div>
-            <div class="inventory-item">
-                <img src="/ASSETS/default.jpg" alt="Item">
-                <div class="item-info">
-                    <h3>Item 2</h3>
-                    <p>Description de l'item 2</p>
-                </div>
-            </div>
-            <div class="inventory-item">
-                <img src="/ASSETS/default.jpg" alt="Item">
-                <div class="item-info">
-                    <h3>Item 3</h3>
-                    <p>Description de l'item 3</p>
-                </div>
-            </div>
-            <div class="inventory-item">
-                <img src="/ASSETS/default.jpg" alt="Item">
-                <div class="item-info">
-                    <h3>Item 4</h3>
-                    <p>Description de l'item 4</p>
-                </div>
-            </div>
-            <div class="inventory-item">
-                <img src="/ASSETS/default.jpg" alt="Item">
-                <div class="item-info">
-                    <h3>Item 5</h3>
-                    <p>Description de l'item 5</p>
-                </div>
-            </div>
-            <div class="inventory-item">
-                <img src="/ASSETS/default.jpg" alt="Item">
-                <div class="item-info">
-                    <h3>Item 6</h3>
-                    <p>Description de l'item 6</p>
-                </div>
-            </div>
-            <div class="inventory-item">
-                <img src="ASSETS/default.jpg" alt="Item">
-                <div class="item-info">
-                    <h3>Item 7</h3>
-                    <p>Description de l'item 7</p>
-                </div>
-            </div>
-            <div class="inventory-item">
-                <img src="ASSETS/default.jpg" alt="Item">
-                <div class="item-info">
-                    <h3>Item 8</h3>
-                    <p>Description de l'item 8</p>
-                </div>
-            </div>
-            <div class="inventory-item">
-                <img src="ASSETS/default.jpg" alt="Item">
-                <div class="item-info">
-                    <h3>Item 9</h3>
-                    <p>Description de l'item 9</p>
-                </div>
-            </div>
-            <div class="inventory-item">
-                <img src="ASSETS/default.jpg" alt="Item">
-                <div class="item-info">
-                    <h3>Item 10</h3>
-                    <p>Description de l'item 10</p>
-                </div>
-            </div>
-            <div class="inventory-item">
-                <img src="ASSETS/default.jpg" alt="Item" class="item-img">
-                <div class="item-info">
-                    <h3>Item 11</h3>
-                    <p>Description de l'item 11</p>
-                </div>
-            </div>
 
         </div>
     </div>
-    <div class="left_choice">
-        <a id="left_choice_link" href="">
-            <div class="info">
-                <span id="left-text">{{.CurrentEvent.LeftChoice}}</span>
-            </div>
-            <img id="left-image" class="left-img" src="{{.CurrentEvent.LeftImage}}" alt="">
-        </a>
-    </div>
-    <div class="right_choice">
-        <a id="right_choice_link" href="">
-            <div class="info" id="info_bottom_mobile">
-                <span id="right-text">{{.CurrentEvent.RightChoice}}</span>
-            </div>
-            <img id="right-image" class="right-img" src="{{.CurrentEvent.RightImage}}" alt="">
-        </a>
-    </div>
+        <div class="left_choice" >
+            <a id="left_choice_link" onclick="leftChoice()">
+                <div class="info">
+                    <span id="left-text">{{.CurrentEvent.LeftChoice}}</span>
+                </div>
+                <img id="left-image" class="left-img" src="{{.CurrentEvent.LeftImage}}" alt="">
+            </a>
+        </div>
+        <div class="right_choice">
+            <a id="right_choice_link" onclick="rightChoice()">
+                <div class="info" id="info_bottom_mobile">
+                    <span id="right-text">{{.CurrentEvent.RightChoice}}</span>
+                </div>
+                <img id="right-image" class="right-img" src="{{.CurrentEvent.RightImage}}" alt="">
+            </a>
+        </div>
     <div class="center_text">
     <h1 id="main-title">{{.CurrentEvent.Title}}</h1>
     <p id="main-text">
@@ -133,6 +63,10 @@
         Cliquez sur <span id="replace_right"></span> {{.CurrentEvent.RightChoice}}
     </p>
     </div>
+    <form style="display: none;" method="post">
+        <input type="submit" name="choice" id="form_value_left" value="0"></input>
+        <input type="submit" name="choice" id="form_value_right" value="1"></input>
+    </form>
     <script>
         const inventory = document.getElementById("inventory");
         const inventoryLogo = document.querySelector(".inventory-label img");
@@ -149,6 +83,15 @@
                 inventoryCtn.classList.add("hidden");
             }
         });
+
+
+        function leftChoice() {
+            document.getElementById("form_value_left").click();
+        }
+
+        function rightChoice() {
+            document.getElementById("form_value_right").click();
+        }
     </script>
 </body>
 </html>
