@@ -33,7 +33,7 @@ func PrintEvents(events []Evt) {
 }
 
 // Remove Function which removes an element of an array
-func Remove(slice []int, i int) []int {
+func Remove(slice []Evt, i int) []Evt {
 	return append(slice[:i], slice[i+1:]...)
 }
 
@@ -80,8 +80,15 @@ func (game *Game) Following() {
 	var fe []Evt
 	var e []Evt = game.AllEvents
 
-	fe = append(fe, 21)
+	fe = append(fe, e[21])
+	fe = append(fe, e[9])
+	fe = append(fe, e[4])
+	fe = append(fe, e[2])
 
+	Remove(e, 21)
+	Remove(e, 9)
+	Remove(e, 4)
+	Remove(e, 2)
 }
 
 // AddItem Function which adds the item from the index in the player inventory
