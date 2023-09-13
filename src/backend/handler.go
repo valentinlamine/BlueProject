@@ -25,6 +25,9 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 	} else if r.Method == "POST" {
 		if r.FormValue("name") != "" {
 			p.Username = r.FormValue("name")
+			tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
+			game := StartGame(p)
+			tmpl.Execute(w, game)
 		} else {
 			tmpl := generateTemplate("index.html", []string{"frontend/index.html"})
 			tmpl.Execute(w, nil)
