@@ -9,9 +9,6 @@ import (
 	"time"
 )
 
-// the array of unused events -> to make sure events appear only once
-var notmade []int
-
 // LoadEvents Function which loads the array of events from a json file
 func LoadEvents(filename string) []Evt {
 	f, _ := os.ReadFile(filename)
@@ -20,9 +17,7 @@ func LoadEvents(filename string) []Evt {
 	if err != nil {
 		log.Fatal(err)
 	}
-	for i := 0; i < len(e); i++ {
-		notmade = append(notmade, i)
-	}
+
 	return e
 }
 
@@ -33,25 +28,13 @@ func PrintEvents(events []Evt) {
 		return
 	}
 	for i, e := range events {
-		fmt.Printf("Evenement -%v : %+v\n", i+1, e)
+		fmt.Println(e.Id, " ", i)
 	}
 }
 
 // Remove Function which removes an element of an array
 func Remove(slice []int, i int) []int {
 	return append(slice[:i], slice[i+1:]...)
-}
-
-// PickEvent Function which gives the next event, made is an array of id of past events
-func PickEvent(events []Evt) Evt {
-	if len(notmade) <= 0 {
-		fmt.Println("Plus d'evenements")
-		return Evt{}
-	}
-	i := rand.Intn(len(notmade))
-	ind := notmade[i]
-	notmade = Remove(notmade, i)
-	return events[ind]
 }
 
 // LoadItems Function which loads the array of items from a json file
@@ -72,13 +55,14 @@ func PrintItems(events []Item) {
 		return
 	}
 	for i, e := range events {
-		fmt.Printf("Item -%v : %+v\n", i+1, e)
+		fmt.Println(e.Id, " ", i)
 	}
 }
 
 // StartGame Function which initiates the data of the ntire game
-func StartGame() Game {
+func StartGame(player Player) Game {
 	var g Game
+	g.PlayerInfo = player
 	g.Items = LoadItems("DATA/items.json")
 	g.AllEvents = EventShuffle(LoadEvents("DATA/events.json"))
 	return g
@@ -92,13 +76,19 @@ func EventShuffle(events []Evt) []Evt {
 	return events
 }
 
+func (game *Game) Following() {
+	var fe []Evt
+	var e []Evt = game.AllEvents
+
+}
+
 // AddItem Function which adds the item from the index in the player inventory
 func (game *Game) AddItem(ind int) {
 	item := game.Items[ind]
 	game.PlayerInfo.Inventory = append(game.PlayerInfo.Inventory, item)
 }
 
-// ApplyChoice upate player from the choice of the event
+// ApplyChoice select the choice from an int
 func (game *Game) ApplyChoice(choice int) {
 	var c Result
 	event := game.AllEvents[0]
@@ -112,6 +102,7 @@ func (game *Game) ApplyChoice(choice int) {
 	game.ApplyResult(c)
 }
 
+// ApplyResult update player from the choice of the event
 func (game *Game) ApplyResult(c Result) {
 	game.PlayerInfo.Budget += c.Money
 	game.PlayerInfo.Reputation += c.Reputation
