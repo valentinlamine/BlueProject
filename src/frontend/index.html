@@ -21,26 +21,29 @@
         <div class="right-part">
             <h1>Création du personnage</h1>
             <form action="" method="post">
-                <label for="name">Nom du personnage :</label>
+                <label for="name" id="label-name">
+                    Nom du personnage : <br>
+                    <i>le nom ne doit contenir que des lettres et être compris entre 3 et 16 caractères</i>
+                </label>
                 <input type="text" name="name" id="name" placeholder="Nom">
                 <p>Objet de départ :</p>
                 <div class="radio-ctn">
                     <div class="radio">
                         <input type="radio" id="item1" name="item" value="1" checked>
                         <label for="item1">
-                            <img src="/ASSETS/partenariat.jpg">
+                            <img src="/ASSETS/partenariat.jpg" alt="Partenariat">
                         </label>
                     </div>
                     <div class="radio">
                         <input type="radio" id="item2" name="item" value="2">
                         <label for="item2">
-                            <img src="/ASSETS/crepe.png">
+                            <img src="/ASSETS/crepe.png" alt="Crêpe">
                         </label>
                     </div>
                     <div class="radio">
                         <input type="radio" id="item3" name="item" value="3">
                         <label for="item3">
-                            <img src="/ASSETS/pub.jpg">
+                            <img src="/ASSETS/pub.jpg" alt="Publicité">
                         </label>
                     </div>
                 </div>
@@ -59,7 +62,7 @@
                         </div>
                     </div>
                     <div class="question">
-                        <p>Deux eleves veulent faire un startup Yboost sur Counter Strike et ils l'appeleraient Climbing Offensive</p>
+                        <p>Deux élèves veulent faire une startup Yboost sur Counter Strike et ils l'appelleraient Climbing Offensive</p>
                         <div class="radio-ctn">
                             <div class="radio">
                                 <input type="radio" id="rep3" name="rep2" value="left" checked>
@@ -72,7 +75,7 @@
                         </div>
                     </div>
                     <div class="question">
-                        <p>Un groupe d'eleve veulent ouvrir un PMU</p>
+                        <p>Un groupe d'élève veulent ouvrir un PMU</p>
                         <div class="radio-ctn">
                             <div class="radio">
                                 <input type="radio" id="rep5" name="rep3" value="left" checked>
@@ -85,8 +88,14 @@
                         </div>
                     </div>
                 </div>
-                <input name="start" type="submit" value="start">
+                <input name="start" type="submit" value="start" disabled>
             </form>
+            <script>
+                nameinput = document.getElementById("name");
+                nameinput.addEventListener("input", function() {
+                    document.getElementsByName("start")[0].disabled = !(/^[a-zA-Z]+$/.test(nameinput.value) && nameinput.value.length >= 3 && nameinput.value.length <= 16);
+                });
+            </script>
         </div>
     </div>
 </body>

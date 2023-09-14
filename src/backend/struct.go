@@ -9,6 +9,7 @@ type Game struct {
 	AllMarchants    []Marchant
 	CurrentEvent    Evt
 	Items           []Item
+	FinalNotation   string
 	MarchantTurn    int
 	Turn            int
 	Start           bool

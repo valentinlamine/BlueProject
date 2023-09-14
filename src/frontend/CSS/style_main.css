@@ -85,6 +85,13 @@ body, html {
 .bg-text .right-part form label, .bg-text .right-part form p {
     margin-bottom: 5px;
 }
+#label-name {
+    text-align: left;
+}
+
+#label-name i {
+    color: #23b2a4;
+}
 
 .radio-ctn {
     display: flex;
@@ -161,6 +168,13 @@ body, html {
     color: #23b2a4;
     transition: all 0.2s;
     opacity: 1;
+}
+
+.bg-text .right-part form input:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    border: 1px solid #cccccc;
 }
 
 .logo-ctn {

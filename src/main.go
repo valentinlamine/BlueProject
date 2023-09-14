@@ -22,14 +22,6 @@ func main() {
 
 	r.HandleFunc("/", g.IndexHandler)
 
-	/*var game backend.Game
-	game.StartGame()
-	game.PlayerInfo.Inventory = game.Items
-	backend.PrintItems(game.PlayerInfo.Inventory)
-	fmt.Println(game.UseItem(4))
-	fmt.Println(game.UseItem(9))
-	backend.PrintItems(game.PlayerInfo.Inventory)*/
-
 	fmt.Println("server is running on port 8080 : http://localhost:8080")
 	if err := http.ListenAndServe(":8080", r); err != nil {
 		log.Fatal(err)

@@ -1,14 +1,10 @@
 package backend
 
 import (
-	"bufio"
 	"encoding/json"
-	"fmt"
 	"log"
 	"math/rand"
 	"os"
-	"strconv"
-	"strings"
 	"time"
 )
 
@@ -24,17 +20,6 @@ func LoadEvents(filename string) []Evt {
 	return e
 }
 
-// PrintEvents Function which prints the array of events
-func PrintEvents(events []Evt) {
-	if len(events) == 0 {
-		fmt.Println("Pas d'evenements ...")
-		return
-	}
-	for _, e := range events {
-		fmt.Println(e.Id)
-	}
-}
-
 // LoadItems Function which loads the array of items from a json file
 func LoadItems(filename string) []Item {
 	f, _ := os.ReadFile(filename)
@@ -44,17 +29,6 @@ func LoadItems(filename string) []Item {
 		log.Fatal(err)
 	}
 	return e
-}
-
-// PrintItems Function which prints the array of items
-func PrintItems(events []Item) {
-	if len(events) == 0 {
-		fmt.Println("Pas d'items ...")
-		return
-	}
-	for _, e := range events {
-		fmt.Print(e.Id)
-	}
 }
 
 func LoadMarchand(filename string, g Game) []Marchant {
@@ -126,11 +100,6 @@ func (g *Game) Following() {
 	g.AllEvents = Remove(g.AllEvents, 9)
 	g.AllEvents = Remove(g.AllEvents, 4)
 	g.AllEvents = Remove(g.AllEvents, 2)
-
-	/*fmt.Println("\n----------------")
-	for i := 0; i != len(g.AllEvents); i++ {
-		fmt.Print("id:", g.AllEvents[i].Id, " ")
-	}*/
 }
 
 // AddItem Function which adds the item from the index in the player inventory
@@ -180,10 +149,8 @@ func (game *Game) ApplyChoice(choice int) (bool, string) {
 	if game.CurrentEvent.Id == 21 {
 		var b bool = false
 		for i := 0; i < len(game.PlayerInfo.Inventory); i++ {
-			fmt.Println(game.PlayerInfo.Inventory[i].Id)
 			if game.PlayerInfo.Inventory[i].Id == 9 {
 				b = true
-				fmt.Println(b)
 			}
 		}
 		if b && choice == 1 {
@@ -251,7 +218,6 @@ func (game *Game) ApplyResult(c Result) (bool, string) {
 
 	// add the object if necessary
 	if c.ObjectQuantity != 0 {
-		fmt.Println(c)
 		game.AddItem(c.ObjectId)
 	}
 	return true, "tout va bien"
@@ -282,26 +248,18 @@ func (game *Game) ManageEvent(choice int) (bool, string) {
 	case 2:
 		if choice == 1 {
 			game.AllEvents = Insert(game.AllEvents, 1, game.FollowEvents[3])
-			//fmt.Println("voici l'evenement choc: ", game.FollowEvents[3])
-			//game.AllEvents = Insert(game.AllEvents, ind, game.FollowEvents[3])
 		}
 	case 4:
 		if choice == 1 {
 			game.AllEvents = Insert(game.AllEvents, 1, game.FollowEvents[2])
-			//fmt.Println("voici l'evenement choc: ", game.FollowEvents[2])
-			//game.AllEvents = Insert(game.AllEvents, ind, game.FollowEvents[2])
 		}
 	case 9:
 		if choice == 0 {
 			game.AllEvents = Insert(game.AllEvents, 1, game.FollowEvents[1])
-			//fmt.Println("voici l'evenement choc: ", game.FollowEvents[1])
-			//game.AllEvents = Insert(game.AllEvents, ind, game.FollowEvents[1])
 		}
 	case 19:
 		if choice == 1 {
 			game.AllEvents = Insert(game.AllEvents, 1, game.FollowEvents[0])
-			//fmt.Println("voici l'evenement choc: ", game.FollowEvents[0])
-			//game.AllEvents = Insert(game.AllEvents, ind, game.FollowEvents[0])
 		}
 	}
 
@@ -337,49 +295,6 @@ func (game *Game) UseItem(id int) (bool, string) {
 	return true, "item utilisé"
 }
 
-// TEST
-// Test gathers the functions in order to have a playable game in terminal
-func Test(player Player) {
-	var game Game
-	game.StartGame()
-	PrintEvents(game.AllEvents)
-	fmt.Println("len de events: ", len(game.AllEvents))
-
-	// iteration until end of event array
-	for ind := 0; ind < len(game.AllEvents); ind++ {
-		if ind == len(game.AllEvents) {
-			fmt.Println("Victoire")
-			return
-		}
-		game.CurrentEvent = game.AllEvents[ind]
-
-		// setup of interface
-		reader := bufio.NewReader(os.Stdin)
-		fmt.Println("buget: ", game.PlayerInfo.Budget, " etat: ", game.PlayerInfo.State, " reput: ", game.PlayerInfo.Reputation)
-		fmt.Println("-------------------------------------")
-		fmt.Println("id: ", game.CurrentEvent.Id, "titre: ", game.CurrentEvent.Title)
-		fmt.Println(game.CurrentEvent.Description)
-		fmt.Println("choix 0: ", game.CurrentEvent.LeftChoice)
-		fmt.Println("choix 1: ", game.CurrentEvent.RightChoice)
-		for {
-			fmt.Println("Enter choice: ")
-			res, _ := reader.ReadString('\n')
-			res = strings.Replace(res, "\n", "", -1)
-			res = strings.Replace(res, "\r", "", -1)
-
-			// getting the choice of user and managing the event
-			choice, err := strconv.Atoi(res)
-			fmt.Println("entered number: ", choice, "\nerreur: ", err)
-			destin, s := game.ManageEvent(choice)
-			if destin {
-				fmt.Println(s)
-				return
-			}
-			break
-		}
-	}
-}
-
 func (game *Game) GetItemById(id int) Item {
 	for _, item := range game.Items {
 		if item.Id == id {
@@ -387,4 +302,19 @@ func (game *Game) GetItemById(id int) Item {
 		}
 	}
 	return Item{}
+}
+
+func (g *Game) GetFinalNotation() string {
+	switch true {
+	case (g.PlayerInfo.Reputation >= -100 && g.PlayerInfo.Reputation <= -21):
+		return "Vous êtes un démon"
+	case (g.PlayerInfo.Reputation >= -20 && g.PlayerInfo.Reputation <= 0):
+		return "Vous êtes mal"
+	case (g.PlayerInfo.Reputation >= 1 && g.PlayerInfo.Reputation <= 20):
+		return "Vous êtes bon"
+	case (g.PlayerInfo.Reputation >= 21 && g.PlayerInfo.Reputation <= 100):
+		return "Vous êtes un ange"
+	default:
+		return "vous êtres un ange"
+	}
 }

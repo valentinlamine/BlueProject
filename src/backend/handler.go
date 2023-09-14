@@ -2,12 +2,12 @@ package backend
 
 import (
 	"encoding/json"
-	"fmt"
 	"html/template"
 	"math/rand"
 	"net/http"
 	"regexp"
 	"strconv"
+	"strings"
 )
 
 func generateTemplate(templateName string, filepaths []string) *template.Template {
@@ -20,11 +20,10 @@ func generateTemplate(templateName string, filepaths []string) *template.Templat
 }
 
 func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(g.MarchantTurn, g.Turn)
 	if r.Method == "POST" {
 		if r.FormValue("name") != "" {
-			fmt.Println("test1")
-			g.PlayerInfo.Username = r.FormValue("name")
+			//capitalize name form value
+			g.PlayerInfo.Username = capitalize(r.FormValue("name"))
 			r.Form.Set("name", "")
 			tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
 			game := g.StartGame()
@@ -34,26 +33,23 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		if g.Turn%g.MarchantTurn == 0 {
-			fmt.Println(g.Turn, "merchant turn")
 			if r.FormValue("leave") != "" {
-				fmt.Println("nextTurn")
 				r.Form.Set("choice", "")
 				tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
 				game := g.ContinueGame()
 				g.Turn++
 				tmpl.Execute(w, game)
 			} else {
-				fmt.Println("marchand")
 				i := rand.Intn(3-0) + 0
 				g.CurrentMarchant = g.AllMarchants[i]
 				tmpl := generateTemplate("marchand.html", []string{"frontend/marchand.html"})
 				tmpl.Execute(w, g)
 			}
 		} else {
-			fmt.Println("nextTurn2")
 			awnser, _ := strconv.Atoi(r.FormValue("choice"))
 			success, info := g.ManageEvent(awnser)
 			if !success {
+				g.FinalNotation = g.GetFinalNotation()
 				switch info {
 				case "Prison":
 					tmpl := generateTemplate("prisonend.html", []string{"frontend/prisonend.html"})
@@ -72,7 +68,6 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 					tmpl.Execute(w, g)
 				}
 			} else {
-				fmt.Println(success, info)
 				r.Form.Set("choice", "")
 				tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
 				game := g.ContinueGame()
@@ -86,10 +81,21 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func capitalize(input string) string {
+	// Check if the input string is empty
+	if len(input) == 0 {
+		return ""
+	}
+
+	// Convert the first character to uppercase and the rest to lowercase
+	capitalized := strings.ToUpper(input[0:1]) + strings.ToLower(input[1:])
+
+	return capitalized
+}
+
 func (g *Game) SetupGame(item string, rep1 string, rep2 string, rep3 string) {
 	//change item to int
 	itemInt, _ := strconv.Atoi(item)
-	fmt.Println(itemInt)
 	g.AddItem(itemInt)
 	if rep1 == "left" {
 		g.PlayerInfo.Reputation += 15
