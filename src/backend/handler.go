@@ -19,7 +19,7 @@ func generateTemplate(templateName string, filepaths []string) *template.Templat
 }
 
 func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(g.Turn)
+	fmt.Println(g.MarchantTurn, g.Turn)
 	if r.Method == "POST" {
 		if r.FormValue("name") != "" {
 			fmt.Println("test1")
@@ -38,6 +38,7 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 				r.Form.Set("choice", "")
 				tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
 				game := g.ContinueGame()
+				g.Turn++
 				tmpl.Execute(w, game)
 			} else {
 				fmt.Println("marchand")
