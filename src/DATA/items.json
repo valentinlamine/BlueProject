@@ -14,8 +14,8 @@
     
   },{
     "id": 2,
-    "name": "Midi crepe",
-    "description": "Vous organisez un midi crepe pour tout le monde !",
+    "name": "Midi crêpes",
+    "description": "Vous organisez un midi crêpes pour tout le monde !",
     "achetable": true,
     "buyPrice": 500,
     "sellPrice": 200,
@@ -150,8 +150,8 @@
     "image": "ASSETS/statue.jpg"
   },{
     "id":13,
-    "name": "un ticket de loto déja gratté",
-    "description": "C'est un ticket déja gratté",
+    "name": "un ticket de loto déjà gratté",
+    "description": "C'est un ticket déjà gratté",
     "achetable": true,
     "buyPrice": 20,
     "sellPrice": 0,
@@ -163,8 +163,8 @@
   }
   ,{
     "id":14,
-    "name": "Des cacahuetes",
-    "description": "Des cacahuetes dans un gobelet en plastique",
+    "name": "Des cacahuètes",
+    "description": "Des cacahuètes dans un gobelet en plastique",
     "achetable": true,
     "buyPrice": 200,
     "sellPrice": 0,
