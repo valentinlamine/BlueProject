@@ -21,8 +21,14 @@ func generateTemplate(templateName string, filepaths []string) *template.Templat
 func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		if r.FormValue("name") != "" {
+			fmt.Println("test1")
 			g.PlayerInfo.Username = r.FormValue("name")
-			//clear form value
+			item, _ := strconv.Atoi(r.FormValue("item"))
+			//g.AddItem(item - 1)
+			fmt.Println(r.FormValue("item"))
+			fmt.Println(r.FormValue("rep1"))
+			fmt.Println(r.FormValue("rep2"))
+			fmt.Println(r.FormValue("rep3"))
 			r.Form.Set("name", "")
 			tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
 			game := g.StartGame()
@@ -30,17 +36,23 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 			tmpl.Execute(w, game)
 		}
 		if r.FormValue("choice") != "" {
+			fmt.Println("choice != \"\"")
 			if g.Turn%g.MarchantTurn == 0 {
-				if r.FormValue("leave") == "" {
+				if r.FormValue("leave") != "" {
+					fmt.Println("nextTurn")
+					r.Form.Set("choice", "")
+					tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
+					game := g.ContinueGame()
+					tmpl.Execute(w, game)
+				} else {
 					fmt.Println("marchand")
 					i := rand.Intn(3-0) + 0
 					g.CurrentMarchant = g.AllMarchants[i]
-					fmt.Println(g.CurrentMarchant)
 					tmpl := generateTemplate("marchand.html", []string{"frontend/marchand.html"})
-					g.Turn++
 					tmpl.Execute(w, g)
 				}
 			} else {
+				fmt.Println("nextTurn")
 				awnser, _ := strconv.Atoi(r.FormValue("choice"))
 				g.ApplyChoice(awnser)
 				r.Form.Set("choice", "")
@@ -75,11 +87,17 @@ func (g *Game) SellHandler(w http.ResponseWriter, r *http.Request) {
 	success, info := g.SellItem(data.Id)
 	if success {
 		response := struct {
-			Success bool   `json:"success"`
-			Info    string `json:"info"`
+			Success    bool   `json:"success"`
+			Info       string `json:"info"`
+			Budget     int    `json:"budget"`
+			Reputation int    `json:"reputation"`
+			EtatEcole  int    `json:"etatEcole"`
 		}{
-			Success: true,
-			Info:    info,
+			Success:    true,
+			Info:       info,
+			Budget:     g.PlayerInfo.Budget,
+			Reputation: g.PlayerInfo.Reputation,
+			EtatEcole:  g.PlayerInfo.State,
 		}
 		jsonResponse, err := json.Marshal(response)
 		if err != nil {
@@ -90,11 +108,17 @@ func (g *Game) SellHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write(jsonResponse)
 	} else {
 		response := struct {
-			Success bool   `json:"success"`
-			Info    string `json:"info"`
+			Success    bool   `json:"success"`
+			Info       string `json:"info"`
+			Budget     int    `json:"budget"`
+			Reputation int    `json:"reputation"`
+			EtatEcole  int    `json:"etatEcole"`
 		}{
-			Success: false,
-			Info:    info,
+			Success:    false,
+			Info:       info,
+			Budget:     g.PlayerInfo.Budget,
+			Reputation: g.PlayerInfo.Reputation,
+			EtatEcole:  g.PlayerInfo.State,
 		}
 		jsonResponse, err := json.Marshal(response)
 		if err != nil {
@@ -125,11 +149,17 @@ func (g *Game) BuyHandler(w http.ResponseWriter, r *http.Request) {
 	success, info := g.BuyItem(data.Id)
 	if success {
 		response := struct {
-			Success bool   `json:"success"`
-			Info    string `json:"info"`
+			Success    bool   `json:"success"`
+			Info       string `json:"info"`
+			Budget     int    `json:"budget"`
+			Reputation int    `json:"reputation"`
+			EtatEcole  int    `json:"etatEcole"`
 		}{
-			Success: true,
-			Info:    info,
+			Success:    true,
+			Info:       info,
+			Budget:     g.PlayerInfo.Budget,
+			Reputation: g.PlayerInfo.Reputation,
+			EtatEcole:  g.PlayerInfo.State,
 		}
 		jsonResponse, err := json.Marshal(response)
 		if err != nil {
@@ -140,11 +170,17 @@ func (g *Game) BuyHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write(jsonResponse)
 	} else {
 		response := struct {
-			Success bool   `json:"success"`
-			Info    string `json:"info"`
+			Success    bool   `json:"success"`
+			Info       string `json:"info"`
+			Budget     int    `json:"budget"`
+			Reputation int    `json:"reputation"`
+			EtatEcole  int    `json:"etatEcole"`
 		}{
-			Success: false,
-			Info:    info,
+			Success:    false,
+			Info:       info,
+			Budget:     g.PlayerInfo.Budget,
+			Reputation: g.PlayerInfo.Reputation,
+			EtatEcole:  g.PlayerInfo.State,
 		}
 		jsonResponse, err := json.Marshal(response)
 		if err != nil {
@@ -175,11 +211,17 @@ func (g *Game) UseHandler(w http.ResponseWriter, r *http.Request) {
 	success, info := g.UseItem(data.Id)
 	if success {
 		response := struct {
-			Success bool   `json:"success"`
-			Info    string `json:"info"`
+			Success    bool   `json:"success"`
+			Info       string `json:"info"`
+			Budget     int    `json:"budget"`
+			Reputation int    `json:"reputation"`
+			EtatEcole  int    `json:"etatEcole"`
 		}{
-			Success: true,
-			Info:    info,
+			Success:    true,
+			Info:       info,
+			Budget:     g.PlayerInfo.Budget,
+			Reputation: g.PlayerInfo.Reputation,
+			EtatEcole:  g.PlayerInfo.State,
 		}
 		jsonResponse, err := json.Marshal(response)
 		if err != nil {
@@ -190,11 +232,17 @@ func (g *Game) UseHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write(jsonResponse)
 	} else {
 		response := struct {
-			Success bool   `json:"success"`
-			Info    string `json:"info"`
+			Success    bool   `json:"success"`
+			Info       string `json:"info"`
+			Budget     int    `json:"budget"`
+			Reputation int    `json:"reputation"`
+			EtatEcole  int    `json:"etatEcole"`
 		}{
-			Success: false,
-			Info:    info,
+			Success:    false,
+			Info:       info,
+			Budget:     g.PlayerInfo.Budget,
+			Reputation: g.PlayerInfo.Reputation,
+			EtatEcole:  g.PlayerInfo.State,
 		}
 		jsonResponse, err := json.Marshal(response)
 		if err != nil {

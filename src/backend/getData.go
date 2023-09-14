@@ -97,15 +97,15 @@ func (g *Game) ContinueGame() Game {
 
 // EventShuffle Function which randomizes the event array
 func (g *Game) EventShuffle(events []Evt) {
-	var tmp Evt
+	//var tmp Evt
 	rand.Seed(time.Now().UnixNano())
 	rand.Shuffle(len(events),
 		func(i, j int) { events[i], events[j] = events[j], events[i] })
-	for i := 1; i != len(events); i++ {
+	/*for i := 1; i != len(events); i++ {
 		if i%g.MarchantTurn == 0 {
 			Insert(g.AllEvents, i, tmp)
 		}
-	}
+	}*/
 	g.AllEvents = events
 }
 
@@ -146,29 +146,31 @@ func (game *Game) BuyItem(id int) (bool, string) {
 			return false, "Objet déjà possédé"
 		}
 	}
-	item := game.Items[id]
+	item := game.Items[id-1]
 	if item.BuyPrice > game.PlayerInfo.Budget {
 		return false, "Pas assez d'argent"
 	}
-	game.AddItem(id)
+	game.AddItem(id - 1)
 	game.PlayerInfo.Budget -= item.BuyPrice
 	return true, "item acheté"
 }
 
 // SellItem Removes the item and adds the money to the player
 func (game *Game) SellItem(id int) (bool, string) {
+	var ind int
 	var b bool = false
 	for i := 0; i < len(game.PlayerInfo.Inventory); i++ {
 		if game.PlayerInfo.Inventory[i].Id == id {
 			b = true
+			ind = i
 		}
 	}
 	if !b {
 		return false, "Item non possédé"
 	}
-	item := game.Items[id]
+	item := game.Items[id-1]
 	game.PlayerInfo.Budget += item.SellPrice
-	game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, id)
+	game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, ind)
 	return true, "item vendu"
 }
 
@@ -218,10 +220,17 @@ func (game *Game) ApplyResult(c Result) int {
 			return 1
 		}
 	}
-	if game.PlayerInfo.Budget > 100 {
-		game.PlayerInfo.Budget = 100
-	}
+
+	// reputation can must be between 100 and -100
 	game.PlayerInfo.Reputation += c.Reputation
+	if game.PlayerInfo.Reputation > 100 {
+		game.PlayerInfo.Reputation = 100
+	}
+	if game.PlayerInfo.Reputation < -100 {
+		game.PlayerInfo.Reputation = -100
+	}
+
+	// state must be between 0 and 100
 	game.PlayerInfo.State += c.State
 	if game.PlayerInfo.State <= 0 {
 		return 1
@@ -229,8 +238,10 @@ func (game *Game) ApplyResult(c Result) int {
 	if game.PlayerInfo.State > 100 {
 		game.PlayerInfo.State = 100
 	}
+
+	// add the object if necessary
 	if c.ObjectQuantity != 0 {
-		game.AddItem(c.ObjectId)
+		game.AddItem(c.ObjectId - 1)
 	}
 	return 0
 }

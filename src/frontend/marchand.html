@@ -10,11 +10,11 @@
 <body>
     <div class="header-left">
         <h1>{{.PlayerInfo.Username}}</h1>
-        <h2>Budget : {{.PlayerInfo.Budget}}€</h2>
+        <h2 id="budget">Budget : {{.PlayerInfo.Budget}}€</h2>
     </div>
     <div class="header-right">
-        <h1>Réputation : {{.PlayerInfo.Reputation}}%</h1>
-        <h2>État école : {{.PlayerInfo.State}}%</h2>
+        <h1 id="reputation">Réputation : {{.PlayerInfo.Reputation}}%</h1>
+        <h2 id="etatEcole">État école : {{.PlayerInfo.State}}%</h2>
     </div>
     <div class="inventory player">
         <h1>Inventaire du joueur</h1>
@@ -28,7 +28,7 @@
                         <h4>{{$v.SellPrice}}€</h4>
                         <p>{{$v.Description}}</p>
                     </div>
-                    <button onclick="sellItem({{$v.Id}})">Utiliser</button>
+                    <button onclick="sellItem(this, {{$v.Id}})">Vendre</button>
                 </div>
             </div>
             {{end}}
@@ -45,8 +45,10 @@
             </p>
         </div>
         <div class="right">
-            <img src="/ASSETS/default.jpg" alt="Item">
-            <button>Quitter le marchand !</button>
+            <img src="{{.CurrentMarchant.Image}}" alt="Item">
+            <form action="" method="post">
+                <input type="submit" name="leave" value="leave">Quitter le marchand !</input>
+            </form>
         </div>
 
     </div>
@@ -63,61 +65,11 @@
                         <p>{{$y.Description}}</p>
                     </div>
                 </div>
-                <button onclick="buyItem({{$y.Id}})">Acheter</button>
+                <button onclick="buyItem(this, {{$y.Id}})">Acheter</button>
             </div>
             {{end}}
         </div>
     </div>
-    <script>
-        function sellItem(div, id) {
-            fetch("/sell", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    id: id
-                })
-            })
-            .then(response => response.text())
-            .then(data => {
-                data = JSON.parse(data);
-                if (data.success) {
-                    alert("Vente effectuée !");
-                    div.parentElement.remove();
-                } else {
-                    alert(data.info);
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        }
-
-        function buyItem(div, id) {
-            fetch("/buy", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    id: id
-                })
-            })
-            .then(response => response.text())
-            .then(data => {
-                data = JSON.parse(data);
-                if (data.success) {
-                    alert("Achat effectué !");
-                    div.parentElement.remove();
-                } else {
-                    alert(data.info);
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        }
-    </script>
+    <script src="/JS/api.js"></script>
 </body>
 </html>

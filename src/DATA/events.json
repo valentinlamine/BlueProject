@@ -9,14 +9,14 @@
       "money": 100,
       "reputation": -10,
       "state": 0,
-      "object-id": 0,
+      "object": 0,
       "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": 0,
       "reputation": 10,
       "state": 0,
-      "object-id": 0,
+      "object": 0,
         "ObjectQuantity": 0
     },
     "left-choice-image": "ASSETS/money.gif",
@@ -33,7 +33,7 @@
       "reputation": 10,
       "state": 10,
       "object": 0,
-      "ObjectQuantity": 1
+      "ObjectQuantity": 0
     },
     "right-choice-result": {
       "money": -250,
@@ -438,7 +438,7 @@
   },
   {
     "id": 20,
-    "title": "Les Disque Dur",
+    "title": "Le Disque Dur",
     "description": "Une personne oublie un disque dur dans votre école que faites vous ?",
     "left-choice": "le garder",
     "right-choice": "le rendre à la personne",
@@ -446,7 +446,7 @@
       "money": 0,
       "reputation": -10,
       "state": 0,
-      "object": 7,
+      "object": 9,
       "ObjectQuantity": 1
     },
     "right-choice-result": {

@@ -1,3 +1,85 @@
+## **Projet-Blue :**
+
+Ce projet a été réalisé par [Valentin Lamine](https://github.com/valentinlamine/), [Mattéo Vocanson](https://github.com/matteoVcs), [Noa Gambey](https://github.com/NoaYnov) et [Dimitri Brancourt](https://github.com/Aph0rism) dans le cadre d'un devoir scolaire visant à créer un jeu à choix avec un choix de language libre
+# Présentation du projet :
+
+Pour notre projet Blue nous avons choisis de faire un jeu liant amusement ,reflexion et humour sur le theme de Ynov, plus précisement sur l'administration de Ynov (il s'agit de second degré et nous ne dénigrons en aucun cas le travail de toutes personne de l'établissement).
+
+## Fonctionnalités du site :
+
+* Enregistrement du pseudo
+* Questionnaire de réputation
+* One page
+* Système de réputation
+* Système d'argent
+* Système d'état des lieux
+
+# **Lancement du projet :**
+
+Pour accéder au projet, vous devez d'abord cloner le projet sur votre machine locale, ouvrir le fichier src et lancer le fichier main.go avec les commandes suivantes :
+
+
+```bash
+cd src
+go run main.go
+```
+
+# **Organisation des dossiers :**
+
+## **Dossier docs**
+
+Le dossier docs contient tous le Trello du projet : [Trello](https://trello.com/b/vArZajdq/blue-project)
+
+## **Dossier src**
+
+Le dossier src contient tous les fichiers sources nécessaires au fonctionnement du projet :
+
+* Fichier [main.go](https://github.com/valentinlamine/LAMINE-VOCANSON-GAMBEY-BRANCOURT-blue-project/tree/main/src/main.go) : fichier de lancement du projet
+* Dossier [backend](https://github.com/valentinlamine/LAMINE-VOCANSON-GAMBEY-BRANCOURT-blue-project/tree/main/src/backend) : contient tous les fichiers Go nécessaires au fonctionnement du projet
+* Dossier [frontend](https://github.com/valentinlamine/LAMINE-VOCANSON-GAMBEY-BRANCOURT-blue-project/tree/main/src/frontend) : contient tous les fichiers HTML, dossiers CSS et JS nécessaires au fonctionnement du projet
+* Dossier [ASSETS](https://github.com/valentinlamine/LAMINE-VOCANSON-GAMBEY-BRANCOURT-blue-project/tree/main/src/frontend/ASSETS) : contient tous les images et icones nécessaires au fonctionnement du projet 
+* Dossier [CSS](https://github.com/valentinlamine/LAMINE-VOCANSON-GAMBEY-BRANCOURT-blue-project/tree/main/src/frontend/CSS) : contient tous les fichiers CSS nécessaires au fonctionnement du projet
+* Dossier [JS](https://github.com/valentinlamine/LAMINE-VOCANSON-GAMBEY-BRANCOURT-blue-project/tree/main/src/frontend/JS) : contient tous les fichiers JS nécessaires au fonctionnement du projet
+* Dossier [DATA](https://github.com/valentinlamine/LAMINE-VOCANSON-GAMBEY-BRANCOURT-blue-project/tree/main/src/DATA) : contient tous les fichiers JSON nécessaires au fonctionnement du projet
+
+
+
+## **Autres fichiers**
+
+* [go.mod](https://github.com/valentinlamine/Projet-Forum/blob/main/src/go.mod) et [go.sum](https://github.com/valentinlamine/Projet-Forum/blob/main/src/go.sum) sont des fichiers générés automatiquement par Go pour gérer les dépendances du projet.
+* README.md est ce fichier, qui fournit des informations sur le projet et comment l'utiliser.
+
+# **Répartition des tâches :**
+
+### Noa Gambey :
+
+* Organisation du Trello 
+* Organisation du README
+* Organisation du dossier DATA et de tout le contenu
+
+
+### Mattéo Vocanson :
+
+* Organisation du serveur web en go
+* Organisation du routage 
+* Organisation de la boucle de jeu
+
+
+### Valentin Lamine :
+
+* Maquette du site
+* Organisation du dossier frontend et de tout le contenu
+* Organisation du dossier JS et de tout le contenu
+* Organisation du dossier CSS et de tout le contenu
+
+### Dimitri Brancourt :
+
+* Organisation de la récuperation de la data
+* Organisation du système d'aleatoire
+* Organisation des update de la data
+
+# **Scenario et Event :**
+
 # BlueProject-rename-
 
 ## Stats du jeu
@@ -110,3 +192,6 @@
 - Marchant normal (Objets de base)
 - Marchant de luxe (Objets chers et très inutiles pour la plupart)
 - Le Publiciatire (Vous propose de faire de la pub pour votre école en échange d'un peu d'argent)
+
+
+

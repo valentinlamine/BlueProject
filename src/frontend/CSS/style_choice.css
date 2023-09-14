@@ -165,6 +165,12 @@ body, html {
       color: #23b2a4;
   }
 
+  .inventory-item .item-info {
+    max-width: 15vw;
+  }
+  
+  
+
 .header-left {
   padding: 10px 20px;
   font-weight: bold;
