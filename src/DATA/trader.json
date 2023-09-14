@@ -4,7 +4,7 @@
         "image" : "ASSETS/louche.png",
         "name" : "Marchant Louche",
         "description" : "Les objets y sont pas chers mais pas non plus tres fiable",
-        "itemsToSell": [1,13,14]
+        "itemsToSell": [1,13,14,8]
     },
     {
         "id" : 2,

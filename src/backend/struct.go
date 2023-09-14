@@ -13,6 +13,7 @@ type Game struct {
 	MarchantTurn    int
 	Turn            int
 	Start           bool
+	BonusReput      bool
 }
 
 // Item Struct Item

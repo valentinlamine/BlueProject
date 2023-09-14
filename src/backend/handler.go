@@ -21,6 +21,12 @@ func generateTemplate(templateName string, filepaths []string) *template.Templat
 
 func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
+		if r.FormValue("restart") != "" {
+			g.StartGame()
+			tmpl := generateTemplate("index.html", []string{"frontend/index.html"})
+			tmpl.Execute(w, nil)
+			return
+		}
 		if r.FormValue("name") != "" {
 			//capitalize name form value
 			g.PlayerInfo.Username = capitalize(r.FormValue("name"))
@@ -34,16 +40,24 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if g.Turn%g.MarchantTurn == 0 {
 			if r.FormValue("leave") != "" {
-				r.Form.Set("choice", "")
-				tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
-				game := g.ContinueGame()
-				g.Turn++
-				tmpl.Execute(w, game)
+				if len(g.AllEvents) == 1 {
+					tmpl := generateTemplate("winend.html", []string{"frontend/winend.html"})
+					tmpl.Execute(w, g)
+					return
+				} else {
+					r.Form.Set("choice", "")
+					tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
+					game := g.ContinueGame()
+					g.Turn++
+					tmpl.Execute(w, game)
+
+				}
 			} else {
 				i := rand.Intn(3-0) + 0
 				g.CurrentMarchant = g.AllMarchants[i]
 				tmpl := generateTemplate("marchand.html", []string{"frontend/marchand.html"})
 				tmpl.Execute(w, g)
+				return
 			}
 		} else {
 			awnser, _ := strconv.Atoi(r.FormValue("choice"))
@@ -54,18 +68,23 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 				case "Prison":
 					tmpl := generateTemplate("prisonend.html", []string{"frontend/prisonend.html"})
 					tmpl.Execute(w, g)
+					return
 				case "Banqueroute":
 					tmpl := generateTemplate("banquerouteend.html", []string{"frontend/banquerouteend.html"})
 					tmpl.Execute(w, g)
+					return
 				case "Ecroulement":
 					tmpl := generateTemplate("etatend.html", []string{"frontend/etatend.html"})
 					tmpl.Execute(w, g)
+					return
 				case "Incendie":
 					tmpl := generateTemplate("fireend.html", []string{"frontend/fireend.html"})
 					tmpl.Execute(w, g)
+					return
 				case "Victoire":
 					tmpl := generateTemplate("winend.html", []string{"frontend/winend.html"})
 					tmpl.Execute(w, g)
+					return
 				}
 			} else {
 				r.Form.Set("choice", "")
@@ -73,11 +92,13 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 				game := g.ContinueGame()
 				g.Turn++
 				tmpl.Execute(w, game)
+				return
 			}
 		}
 	} else {
 		tmpl := generateTemplate("index.html", []string{"frontend/index.html"})
 		tmpl.Execute(w, nil)
+		return
 	}
 }
 

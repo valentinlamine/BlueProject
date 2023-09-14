@@ -83,9 +83,9 @@
     "buyPrice": 2000,
     "sellPrice": 800,
     "money": 0,
-    "reputation": 30,
+    "reputation": 5,
     "state": 0,
-    "effects": 0,
+    "effects": 4,
     "image": "ASSETS/arcade.png"
   }
   ,{
@@ -93,7 +93,7 @@
     "name": "Certificat medical",
     "description": "Vous permet d'éviter un event !",
     "achetable": false,
-    "buyPrice": 0,
+    "buyPrice": 2000,
     "sellPrice": 0,
     "money": 0,
     "reputation": 0,
@@ -102,7 +102,7 @@
     "image": "ASSETS/medic.jpg"
   },{
     "id":9,
-    "name": "Disque dur compromettant",
+    "name": "Disque dur",
     "description": "Vous avez un disque dur compromettant sur plusieurs personnes !",
     "achetable": false,
     "buyPrice": 0,
@@ -114,7 +114,7 @@
     "image": "ASSETS/dde.jpeg"
   },{
     "id":10,
-    "name": "Un Mug à l'effigie du directeur",
+    "name": "Un Mug du directeur",
     "description": "C'est un Mug à l'effigie du directeur recouvert d'or",
     "achetable": true,
     "buyPrice": 4500,

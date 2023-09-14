@@ -52,6 +52,7 @@ func (g *Game) StartGame() Game {
 	g.PlayerInfo.Reputation = 0
 	g.PlayerInfo.Budget = 6700
 	g.PlayerInfo.State = 50
+	g.PlayerInfo.Inventory = []Item{}
 	g.Items = LoadItems("DATA/items.json")
 	g.AllMarchants = LoadMarchand("DATA/trader.json", *g)
 	g.AllEvents = LoadEvents("DATA/events.json")
@@ -104,6 +105,9 @@ func (g *Game) Following() {
 
 // AddItem Function which adds the item from the index in the player inventory
 func (game *Game) AddItem(id int) {
+	if id == 7 {
+		game.BonusReput = true
+	}
 	item := game.Items[id-1]
 	game.PlayerInfo.Inventory = append(game.PlayerInfo.Inventory, item)
 }
@@ -190,6 +194,7 @@ func (game *Game) ApplyResult(c Result) (bool, string) {
 			if game.PlayerInfo.Inventory[i].Id == 4 {
 				ind = i
 				game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, ind)
+				game.PlayerInfo.Budget = 1
 				b = true
 			}
 		}
@@ -199,7 +204,11 @@ func (game *Game) ApplyResult(c Result) (bool, string) {
 	}
 
 	// reputation can must be between 100 and -100
-	game.PlayerInfo.Reputation += c.Reputation
+	if game.BonusReput && c.Reputation > 0 {
+		game.PlayerInfo.Reputation += c.Reputation + 5
+	} else {
+		game.PlayerInfo.Reputation += c.Reputation
+	}
 	if game.PlayerInfo.Reputation > 100 {
 		game.PlayerInfo.Reputation = 100
 	}
@@ -269,7 +278,7 @@ func (game *Game) ManageEvent(choice int) (bool, string) {
 // UseItem Triggers the item effect and destroy it
 func (game *Game) UseItem(id int) (bool, string) {
 	// ignoring the specials items
-	if id == 4 || id == 9 {
+	if id == 4 || id == 9 || id == 7 {
 		return false, "Item non consommable"
 	}
 

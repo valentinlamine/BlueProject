@@ -86,28 +86,7 @@ html {
     text-align: center;
   }
 
-  #victory_box {
-    background-color: rgba(0,0,0, 0.5);
-  }
-
-  #victory {    
-    font-weight: bolder;
-    background-image: linear-gradient(
-      to right,
-      #89603A 0,
-      #cb9b51 22%, 
-      #f6e27a 45%,
-      #f6f2c0 50%,
-      #f6e27a 55%,
-      #cb9b51 78%,
-      #89603A 100%
-    );
-    color:transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-  }
-
-  button {
+  button, .end-button {
     background-color: rgba(35, 178, 164, 0.5);
     border: none;
     color: black;
@@ -136,18 +115,6 @@ i {
 b {
     color: #FFF;
     font-size: larger;
-}
-
-crypted {
-    font-family: "Minecraft_enchanted";
-}
-
-#hover {
-    font-family: "Minecraftia";
-}
-
-#hover:hover {
-    font-family: "Minecraft_enchanted";
 }
 
 /* Pour mobile */
