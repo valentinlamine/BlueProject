@@ -59,7 +59,7 @@ body, html {
 
 .inventory {
   position: absolute;
-  background: #eeeeee;
+  background: rgba(238, 238, 238, 0.7);
   top: 0;
   left: 0;
   z-index: 20;

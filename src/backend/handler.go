@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"math/rand"
 	"net/http"
+	"regexp"
 	"strconv"
 )
 
@@ -30,6 +31,7 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 			g.SetupGame(r.FormValue("item"), r.FormValue("rep1"), r.FormValue("rep2"), r.FormValue("rep3"))
 			g.Turn++
 			tmpl.Execute(w, game)
+			return
 		}
 		if g.Turn%g.MarchantTurn == 0 {
 			fmt.Println(g.Turn, "merchant turn")
@@ -50,12 +52,33 @@ func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
 		} else {
 			fmt.Println("nextTurn2")
 			awnser, _ := strconv.Atoi(r.FormValue("choice"))
-			g.ApplyChoice(awnser)
-			r.Form.Set("choice", "")
-			tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
-			game := g.ContinueGame()
-			g.Turn++
-			tmpl.Execute(w, game)
+			success, info := g.ManageEvent(awnser)
+			if !success {
+				switch info {
+				case "Prison":
+					tmpl := generateTemplate("prisonend.html", []string{"frontend/prisonend.html"})
+					tmpl.Execute(w, g)
+				case "Banqueroute":
+					tmpl := generateTemplate("banquerouteend.html", []string{"frontend/banquerouteend.html"})
+					tmpl.Execute(w, g)
+				case "Ecroulement":
+					tmpl := generateTemplate("etatend.html", []string{"frontend/etatend.html"})
+					tmpl.Execute(w, g)
+				case "Incendie":
+					tmpl := generateTemplate("fireend.html", []string{"frontend/fireend.html"})
+					tmpl.Execute(w, g)
+				case "Victoire":
+					tmpl := generateTemplate("winend.html", []string{"frontend/winend.html"})
+					tmpl.Execute(w, g)
+				}
+			} else {
+				fmt.Println(success, info)
+				r.Form.Set("choice", "")
+				tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
+				game := g.ContinueGame()
+				g.Turn++
+				tmpl.Execute(w, game)
+			}
 		}
 	} else {
 		tmpl := generateTemplate("index.html", []string{"frontend/index.html"})
@@ -269,4 +292,8 @@ func (g *Game) UseHandler(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-type", "application/json")
 		w.Write(jsonResponse)
 	}
+}
+
+func CheckpseudoFormat(element string) bool {
+	return regexp.MustCompile(`^[A-Z][a-zA-Z]{2,15}$`).MatchString(element)
 }

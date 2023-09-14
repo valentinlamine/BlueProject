@@ -33,7 +33,7 @@ type Result struct {
 	Money          int `json:"money"`
 	Reputation     int `json:"reputation"`
 	State          int `json:"state"`
-	ObjectId       int `json:"object-id"`
+	ObjectId       int `json:"object"`
 	ObjectQuantity int `json:"ObjectQuantity"`
 }
 

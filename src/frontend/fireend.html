@@ -8,6 +8,14 @@
     <title>Admin Simulator</title>
 </head>
 <body>
+    <div class="header-left">
+        <h1>{{.PlayerInfo.Username}}</h1>
+        <h2>Budget : {{.PlayerInfo.Budget}}€</h2>
+    </div>
+    <div class="header-right">
+        <h1>Réputation : {{.PlayerInfo.Reputation}}%</h1>
+        <h2>État école : {{.PlayerInfo.State}}%</h2>
+    </div>
     <div class="bg-image">
         <img src="/ASSETS/fire.gif" alt="a background blurred picture">
     </div>

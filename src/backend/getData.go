@@ -76,12 +76,12 @@ func LoadMarchand(filename string, g Game) []Marchant {
 func (g *Game) StartGame() Game {
 	g.Turn = 0
 	g.PlayerInfo.Reputation = 0
-	g.PlayerInfo.Budget = 20000
+	g.PlayerInfo.Budget = 6700
 	g.PlayerInfo.State = 50
 	g.Items = LoadItems("DATA/items.json")
 	g.AllMarchants = LoadMarchand("DATA/trader.json", *g)
-	g.MarchantTurn = 2 + (len(g.Items) / 3)
 	g.AllEvents = LoadEvents("DATA/events.json")
+	g.MarchantTurn = 2 + (len(g.AllEvents) / 3)
 	g.Following()
 	g.EventShuffle(g.AllEvents)
 	g.CurrentEvent = g.AllEvents[0]
@@ -121,7 +121,7 @@ func RemoveItem(slice []Item, i int) []Item {
 
 // Following separates events with conditions and normal events
 func (g *Game) Following() {
-	g.FollowEvents = append(g.FollowEvents, g.AllEvents[21], g.AllEvents[9], g.AllEvents[4], g.AllEvents[2])
+	g.FollowEvents = append(g.FollowEvents, g.AllEvents[20], g.AllEvents[9], g.AllEvents[4], g.AllEvents[2])
 	g.AllEvents = Remove(g.AllEvents, 20)
 	g.AllEvents = Remove(g.AllEvents, 9)
 	g.AllEvents = Remove(g.AllEvents, 4)
@@ -176,14 +176,14 @@ func (game *Game) SellItem(id int) (bool, string) {
 
 // ApplyChoice select the choice from an int
 func (game *Game) ApplyChoice(choice int) (bool, string) {
+	// event trahison
 	if game.CurrentEvent.Id == 21 {
-		var ind int
 		var b bool = false
 		for i := 0; i < len(game.PlayerInfo.Inventory); i++ {
+			fmt.Println(game.PlayerInfo.Inventory[i].Id)
 			if game.PlayerInfo.Inventory[i].Id == 9 {
-				ind = i
-				game.PlayerInfo.Inventory = RemoveItem(game.PlayerInfo.Inventory, ind)
 				b = true
+				fmt.Println(b)
 			}
 		}
 		if b && choice == 1 {
@@ -191,6 +191,16 @@ func (game *Game) ApplyChoice(choice int) (bool, string) {
 		}
 		return false, "Prison"
 	}
+	// event incendie
+	if game.CurrentEvent.Id == 10 {
+		if choice == 1 {
+			return false, "Incendie"
+		}
+		if game.PlayerInfo.Budget <= 15000 {
+			return false, "Incendie"
+		}
+	}
+
 	var c Result
 	event := game.CurrentEvent
 	if choice == 0 {
@@ -241,7 +251,8 @@ func (game *Game) ApplyResult(c Result) (bool, string) {
 
 	// add the object if necessary
 	if c.ObjectQuantity != 0 {
-		game.AddItem(c.ObjectId - 1)
+		fmt.Println(c)
+		game.AddItem(c.ObjectId)
 	}
 	return true, "tout va bien"
 }
@@ -262,6 +273,9 @@ func (game *Game) ManageEvent(choice int) (bool, string) {
 	ok, s := game.ApplyChoice(choice)
 	if !ok {
 		return ok, s
+	}
+	if len(game.AllEvents) == 1 {
+		return false, "Victoire"
 	}
 
 	switch id {

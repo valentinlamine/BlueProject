@@ -213,7 +213,7 @@
     "left-choice": "réparer les dégâts",
     "right-choice": "ne rien faire car vous n'avez pas d'argent",
     "left-choice-result": {
-      "money": 0,
+      "money": -15000,
       "reputation": 30,
       "state": 50,
       "object": 0,
@@ -221,7 +221,7 @@
     },
     "right-choice-result": {
       "money": 0,
-      "reputation": 10,
+      "reputation": 0,
       "state": 0,
       "object": 0,
         "ObjectQuantity": 0

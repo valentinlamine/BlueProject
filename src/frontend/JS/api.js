@@ -1,6 +1,7 @@
 budget = document.getElementById("budget");
 reputation = document.getElementById("reputation");
 state = document.getElementById("etatEcole");
+inventory = document.getElementById("player-inventory");
 
 function sellItem(div, id) {
     fetch("/sell", {
@@ -46,8 +47,10 @@ function buyItem(div, id) {
         data = JSON.parse(data);
         if (data.success) {
             console.log(data);
-            alert("Achat effectué !");
-            div.parentElement.remove();
+            alert("Vente effectuée !");
+            div.innerHTML = "Vendre";
+            div.setAttribute("onclick", "sellItem(this, " + id + ")");
+            inventory.appendChild(div.parentElement);
             budget.innerHTML = "Budget : " + data.budget + " €";
             reputation.innerHTML = "Reputation : " + data.reputation + " %";
             state.innerHTML = "Etat de l'école : " + data.etatEcole + " %";

@@ -8,6 +8,14 @@
     <title>Admin Simulator</title>
 </head>
 <body>
+    <div class="header-left">
+        <h1>{{.PlayerInfo.Username}}</h1>
+        <h2>Budget : {{.PlayerInfo.Budget}}€</h2>
+    </div>
+    <div class="header-right">
+        <h1>Réputation : {{.PlayerInfo.Reputation}}%</h1>
+        <h2>État école : {{.PlayerInfo.State}}%</h2>
+    </div>
     <div class="bg-image">
         <img src="/ASSETS/ynov_final.png" alt="a background blurred picture">
     </div>
@@ -16,7 +24,7 @@
         <p> 
             Grace à vos choix et votre travail, vous avez réussi à faire de l'école une référence dans le monde de l'informatique.
         </p>
-        <button>Recommencer !</button>
+        <button action="/">Recommencer !</button>
     </div>
 </body>
 </html>
