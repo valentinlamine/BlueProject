@@ -2,9 +2,9 @@
   {
     "id": 1,
     "title": "CVEC",
-    "description": "Le CVEC d'un eleve arrive dans votre budget par erreur comment reagissez vous ?",
-    "left-choice": "Tout garder pour vous",
-    "right-choice": "Le rendre au Crous",
+    "description": "Le CVEC d'un élève arrive dans votre budget par erreur comment réagissez vous ?",
+    "left-choice": "tout garder pour vous",
+    "right-choice": "le rendre au Crous",
     "left-choice-result": {
       "money": 100,
       "reputation": -10,
@@ -24,9 +24,9 @@
   },
   {
     "id": 2,
-    "title": "Problemes de wifi et d'organisation",
+    "title": "Problèmes de wifi et d'organisation",
     "description": "La salle de pause est mal organisée et le wifi ne marche pas, que faites vous ?",
-    "left-choice": "Bouger les micro-ondes",
+    "left-choice": "bouger les micro-ondes",
     "right-choice": "appeler un technicien pour le wifi",
     "left-choice-result": {
       "money": 0,
@@ -49,7 +49,7 @@
     "id": 3,
     "title": "Le Wifi !?!",
     "description": "Le wifi ne marche pas,encore... Que faites vous ?",
-    "left-choice": "changer le reseau",
+    "left-choice": "changer le réseau",
     "right-choice": "changer les micro-ondes de place",
     "left-choice-result": {
       "money": -1000,
@@ -72,8 +72,8 @@
     "id": 4,
     "title": "Les serrures",
     "description": "Voulez vous installer des serrures sur les portes ?",
-    "left-choice": "Oui",
-    "right-choice": "Non",
+    "left-choice": "installer des serrures",
+    "right-choice": "ne rien faire",
     "left-choice-result": {
       "money": -300,
       "reputation": 0,
@@ -94,7 +94,7 @@
   {
     "id": 5,
     "title": "Le cambriolage",
-    "description": "un eleve vous vole le contenu de la A1 ",
+    "description": "un élève vous vole le contenu de la A1 ",
     "left-choice": "pleurer en A1",
     "right-choice": "Pleurer au bureau",
     "left-choice-result": {
@@ -118,8 +118,8 @@
     "id": 6,
     "title": "BDE",
     "description": "Le BDE vous demande de l'argent pour organiser une soirée, que faites vous ?",
-    "left-choice": "Donner de l'argent",
-    "right-choice": "Refuser de donner de l'argent",
+    "left-choice": "leur donner de l'argent",
+    "right-choice": "refuser de donner de l'argent",
     "left-choice-result": {
       "money": -1200,
       "reputation": 30,
@@ -140,9 +140,9 @@
   {
     "id": 7,
     "title": "Projet ambitieux 1",
-    "description": "Un eleve vous demande de l'argent pour un projet ambitieux, que faites vous ?",
-    "left-choice": "Donner de l'argent",
-    "right-choice": "Refuser de donner de l'argent",
+    "description": "Un élève vous demande de l'argent pour un projet ambitieux, que faites vous ?",
+    "left-choice": "lui donner de l'argent",
+    "right-choice": "refuser de donner de l'argent",
     "left-choice-result": {
       "money": -125,
       "reputation": 10,
@@ -163,9 +163,9 @@
   {
     "id": 8,
     "title": "Projet ambitieux 2",
-    "description": "Un eleve vous demande de l'argent pour un projet ambitieux, que faites vous ?",
-    "left-choice": "Donner de l'argent",
-    "right-choice": "Refuser de donner de l'argent",
+    "description": "Un élève vous demande de l'argent pour un projet ambitieux, que faites vous ?",
+    "left-choice": "lui donner de l'argent",
+    "right-choice": "refuser de donner de l'argent",
     "left-choice-result": {
       "money": 350,
       "reputation": 10,
@@ -186,9 +186,9 @@
   {
     "id": 9,
     "title": "Multiprise",
-    "description": "Voulez vous preter une multiprise aux eleves ?",
-    "left-choice": "Oui",
-    "right-choice": "Non",
+    "description": "Voulez vous prêter une multiprise aux élèves ?",
+    "left-choice": "leur prêter une multiprise",
+    "right-choice": "refuser de leur prêter une multiprise",
     "left-choice-result": {
       "money": 0,
       "reputation": 30,
@@ -210,8 +210,8 @@
     "id": 10,
     "title": "Incendie",
     "description": "Un incendie se declare dans la salle de pause, que faites vous ?",
-    "left-choice": "Réparer les dégats",
-    "right-choice": "Vous n'avez plus de budget pour réparer les dégats",
+    "left-choice": "réparer les dégâts",
+    "right-choice": "ne rien faire car vous n'avez pas d'argent",
     "left-choice-result": {
       "money": 0,
       "reputation": 30,
@@ -232,9 +232,9 @@
   {
     "id": 11,
     "title": "Extranet",
-    "description": "Un eleve a un probleme d'accés a l'extranet, que faites vous ?",
-    "left-choice": "Vous l'aidez",
-    "right-choice": "Vous le bloquez",
+    "description": "Un élève a un problème d'accès a l'extranet, que faites vous ?",
+    "left-choice": "l'aider",
+    "right-choice": "le bloquer",
     "left-choice-result": {
       "money": 0,
       "reputation": 10,
@@ -255,9 +255,9 @@
   {
     "id": 12,
     "title": "La Campagne",
-    "description": "Les eleves de market/comm vous propose de faire une campagne de communication dans des lycées gratuitement, que faites vous ?",
-    "left-choice": "Vous acceptez",
-    "right-choice": "Vous refusez",
+    "description": "Les élèves de market/comm vous propose de faire une campagne de communication dans des lycées gratuitement, que faites vous ?",
+    "left-choice": "accepter l'offre",
+    "right-choice": "refuser l'offre",
     "left-choice-result": {
       "money": 6700,
       "reputation": 10,
@@ -279,8 +279,8 @@
     "id": 13,
     "title": "L'Invasion",
     "description": "Il y a une invasion de cafard dans votre école que faites vous ?", 
-    "left-choice": "Vous appelez une entreprise de désinsectisation",
-    "right-choice": "Vous ne faites rien",
+    "left-choice": "appeler une entreprise de désinsectisation",
+    "right-choice": "pour ne rien faire",
     "left-choice-result": {
       "money": -120,
       "reputation": 10,
@@ -302,8 +302,8 @@
     "id": 14,
     "title": "Les Distributeurs",
     "description": "Les distributeurs de la salle de pause sont cassés, que faites vous ?", 
-    "left-choice": "Vous appelez un technicien",
-    "right-choice": "Vous ne faites rien",
+    "left-choice": "appeler un technicien",
+    "right-choice": "ne rien faire",
     "left-choice-result": {
       "money": -120,
       "reputation": 10,
@@ -324,9 +324,9 @@
   {
     "id": 15,
     "title": "Le Mur",
-    "description": "Un des murs de l'école est pas très beau, que faites vous ?",
-    "left-choice": "Vous faites appel à un peintre",
-    "right-choice": "Vous faites appel au M2 Crea/design",
+    "description": "Un des murs de l'école n'est pas très beau, que faites vous ?",
+    "left-choice": "faire appel à un peintre",
+    "right-choice": "faire appel au M2 Créa/design",
     "left-choice-result": {
       "money": -200,
       "reputation": -10,
@@ -346,10 +346,10 @@
   },
   {
     "id": 16,
-    "title": "L'eleve suisse",
-    "description": "Un eleve veut payer ses 3 années en une fois et en especes que faites vous ?",
-    "left-choice": "Vous déclarer l'argent",
-    "right-choice": "Vous acceptez l'argent sans le déclarer  ",
+    "title": "L'élève suisse",
+    "description": "Un élève veut payer ses 3 années en une fois et en espèces que faites vous ?",
+    "left-choice": "déclarer l'argent",
+    "right-choice": "accepter l'argent sans le déclarer",
     "left-choice-result": {
       "money": 0,
       "reputation": 0,
@@ -371,8 +371,8 @@
     "id": 17,
     "title": "Les poubelles",
     "description": "Vous voulez changer les poubelles pour des poubelles de tris mais il y en aura moins que faites vous ?",
-    "left-choice": "Vous les changez",
-    "right-choice": "Vous ne les changez pas",
+    "left-choice": "les changer",
+    "right-choice": "ne rien changer",
     "left-choice-result": {
       "money": -100,
       "reputation": -10,
@@ -392,10 +392,10 @@
   },
   {
     "id": 18,
-    "title": "Les Impots",
-    "description": "Les impots ne vous ont rien demandé depuis longtemps que faites vous ?",
-    "left-choice": "Vous les appelé",
-    "right-choice": "Vous ne les appelez pas",
+    "title": "Les Impôts",
+    "description": "Les impôts ne vous ont rien demandé depuis longtemps que faites vous ?",
+    "left-choice": "les appeler",
+    "right-choice": "ne pas les appeler",
     "left-choice-result": {
       "money": -5000,
       "reputation": 20,
@@ -415,10 +415,10 @@
   },
   {
     "id": 19,
-    "title": "restriction budgetaire",
-    "description": "- Pour économiser de l'argent vous devez virer une personne de l'école, qui choisissez vous ?",
-    "left-choice": "Vous virez un intervenant",
-    "right-choice": "Vous virez votre collègue",
+    "title": "restriction budgétaire",
+    "description": "Pour économiser de l'argent vous devez virer une personne de l'école, qui choisissez vous ?",
+    "left-choice": "virer un intervenant",
+    "right-choice": "virer votre collègue",
     "left-choice-result": {
       "money": 400,
       "reputation": -10,
@@ -440,8 +440,8 @@
     "id": 20,
     "title": "Les Disque Dur",
     "description": "Une personne oublie un disque dur dans votre école que faites vous ?",
-    "left-choice": "Vous le gardez",
-    "right-choice": "Vous le rendez à la personne",
+    "left-choice": "le garder",
+    "right-choice": "le rendre à la personne",
     "left-choice-result": {
       "money": 0,
       "reputation": -10,
@@ -463,8 +463,8 @@
     "id": 21,
     "title": "Trahison",
     "description": "Votre ancienne collègue vous a trahi et compte vous dénoncé pour fraude fiscale que faites vous ?",
-    "left-choice": "Vous allez en prison",
-    "right-choice": "Vous la menacez avec le disque dur compromettant",
+    "left-choice": "aller en prison",
+    "right-choice": "la menacer avec le disque dur compromettant",
     "left-choice-result": {
       "money": 0,
       "reputation": 0,
@@ -485,9 +485,9 @@
   {
     "id": 22,
     "title": "Le Crous",
-    "description": "Le Crous vous achete du materiel pour votre terrasse",
-    "left-choice": "Vous acceptez",
-    "right-choice": "Vous acceptez et vous le revendez",
+    "description": "Le Crous vous achète du materiel pour votre terrasse",
+    "left-choice": "accepter",
+    "right-choice": "accepter et le revendre",
     "left-choice-result": {
       "money": 0,
       "reputation": 10,
