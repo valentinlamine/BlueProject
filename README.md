@@ -1,4 +1,4 @@
-## **Projet-Blue :**
+# **Projet-Blue :**
 
 Ce projet a été réalisé par [Valentin Lamine](https://github.com/valentinlamine/), [Mattéo Vocanson](https://github.com/matteoVcs), [Noa Gambey](https://github.com/NoaYnov) et [Dimitri Brancourt](https://github.com/Aph0rism) dans le cadre d'un devoir scolaire visant à créer un jeu à choix avec un choix de language libre
 # Présentation du projet :
