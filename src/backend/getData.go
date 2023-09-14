@@ -134,8 +134,8 @@ func (g *Game) Following() {
 }
 
 // AddItem Function which adds the item from the index in the player inventory
-func (game *Game) AddItem(ind int) {
-	item := game.Items[ind]
+func (game *Game) AddItem(id int) {
+	item := game.Items[id-1]
 	game.PlayerInfo.Inventory = append(game.PlayerInfo.Inventory, item)
 }
 
@@ -150,7 +150,7 @@ func (game *Game) BuyItem(id int) (bool, string) {
 	if item.BuyPrice > game.PlayerInfo.Budget {
 		return false, "Pas assez d'argent"
 	}
-	game.AddItem(id - 1)
+	game.AddItem(id)
 	game.PlayerInfo.Budget -= item.BuyPrice
 	return true, "item acheté"
 }
@@ -175,7 +175,7 @@ func (game *Game) SellItem(id int) (bool, string) {
 }
 
 // ApplyChoice select the choice from an int
-func (game *Game) ApplyChoice(choice int) int {
+func (game *Game) ApplyChoice(choice int) (bool, string) {
 	if game.CurrentEvent.Id == 21 {
 		var ind int
 		var b bool = false
@@ -187,9 +187,9 @@ func (game *Game) ApplyChoice(choice int) int {
 			}
 		}
 		if b && choice == 1 {
-			return 0
+			return true, "tout va bien"
 		}
-		return 1
+		return false, "Prison"
 	}
 	var c Result
 	event := game.CurrentEvent
@@ -198,13 +198,13 @@ func (game *Game) ApplyChoice(choice int) int {
 	} else if choice == 1 {
 		c = event.RightResult
 	} else {
-		return 1
+		return false, "Erreur"
 	}
 	return game.ApplyResult(c)
 }
 
 // ApplyResult update player from the choice of the event
-func (game *Game) ApplyResult(c Result) int {
+func (game *Game) ApplyResult(c Result) (bool, string) {
 	game.PlayerInfo.Budget += c.Money
 	if game.PlayerInfo.Budget <= 0 {
 		var ind int
@@ -217,7 +217,7 @@ func (game *Game) ApplyResult(c Result) int {
 			}
 		}
 		if !b {
-			return 1
+			return false, "Banqueroute"
 		}
 	}
 
@@ -233,7 +233,7 @@ func (game *Game) ApplyResult(c Result) int {
 	// state must be between 0 and 100
 	game.PlayerInfo.State += c.State
 	if game.PlayerInfo.State <= 0 {
-		return 1
+		return false, "Ecroulement"
 	}
 	if game.PlayerInfo.State > 100 {
 		game.PlayerInfo.State = 100
@@ -243,7 +243,7 @@ func (game *Game) ApplyResult(c Result) int {
 	if c.ObjectQuantity != 0 {
 		game.AddItem(c.ObjectId - 1)
 	}
-	return 0
+	return true, "tout va bien"
 }
 
 // Insert Allows to insert an element in an array
@@ -257,10 +257,11 @@ func Insert(a []Evt, index int, value Evt) []Evt {
 }
 
 // ManageEvent adds the follow event and manage the current event, if the player looses, return 1 else 0
-func (game *Game) ManageEvent(choice int) int {
+func (game *Game) ManageEvent(choice int) (bool, string) {
 	id := game.CurrentEvent.Id
-	if game.ApplyChoice(choice) == 1 {
-		return 1
+	ok, s := game.ApplyChoice(choice)
+	if !ok {
+		return ok, s
 	}
 
 	switch id {
@@ -290,7 +291,7 @@ func (game *Game) ManageEvent(choice int) int {
 		}
 	}
 
-	return 0
+	return true, "Tout va bien"
 }
 
 // UseItem Triggers the item effect and destroy it
@@ -355,9 +356,9 @@ func Test(player Player) {
 			// getting the choice of user and managing the event
 			choice, err := strconv.Atoi(res)
 			fmt.Println("entered number: ", choice, "\nerreur: ", err)
-			destin := game.ManageEvent(choice)
-			if destin == 1 {
-				fmt.Println("Defaite")
+			destin, s := game.ManageEvent(choice)
+			if destin {
+				fmt.Println(s)
 				return
 			}
 			break

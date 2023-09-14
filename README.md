@@ -78,9 +78,8 @@ Le dossier src contient tous les fichiers sources nécessaires au fonctionnement
 * Organisation du système d'aleatoire
 * Organisation des update de la data
 
-# **Scenario et Event :**
+# **Stat, Item et Events :**
 
-# BlueProject-rename-
 
 ## Stats du jeu
 - Budget

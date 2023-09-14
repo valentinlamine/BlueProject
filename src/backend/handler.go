@@ -19,52 +19,68 @@ func generateTemplate(templateName string, filepaths []string) *template.Templat
 }
 
 func (g *Game) IndexHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(g.Turn)
 	if r.Method == "POST" {
 		if r.FormValue("name") != "" {
 			fmt.Println("test1")
 			g.PlayerInfo.Username = r.FormValue("name")
-			item, _ := strconv.Atoi(r.FormValue("item"))
-			//g.AddItem(item - 1)
-			fmt.Println(r.FormValue("item"))
-			fmt.Println(r.FormValue("rep1"))
-			fmt.Println(r.FormValue("rep2"))
-			fmt.Println(r.FormValue("rep3"))
 			r.Form.Set("name", "")
 			tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
 			game := g.StartGame()
+			g.SetupGame(r.FormValue("item"), r.FormValue("rep1"), r.FormValue("rep2"), r.FormValue("rep3"))
 			g.Turn++
 			tmpl.Execute(w, game)
 		}
-		if r.FormValue("choice") != "" {
-			fmt.Println("choice != \"\"")
-			if g.Turn%g.MarchantTurn == 0 {
-				if r.FormValue("leave") != "" {
-					fmt.Println("nextTurn")
-					r.Form.Set("choice", "")
-					tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
-					game := g.ContinueGame()
-					tmpl.Execute(w, game)
-				} else {
-					fmt.Println("marchand")
-					i := rand.Intn(3-0) + 0
-					g.CurrentMarchant = g.AllMarchants[i]
-					tmpl := generateTemplate("marchand.html", []string{"frontend/marchand.html"})
-					tmpl.Execute(w, g)
-				}
-			} else {
+		if g.Turn%g.MarchantTurn == 0 {
+			fmt.Println(g.Turn, "merchant turn")
+			if r.FormValue("leave") != "" {
 				fmt.Println("nextTurn")
-				awnser, _ := strconv.Atoi(r.FormValue("choice"))
-				g.ApplyChoice(awnser)
 				r.Form.Set("choice", "")
 				tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
 				game := g.ContinueGame()
-				g.Turn++
 				tmpl.Execute(w, game)
+			} else {
+				fmt.Println("marchand")
+				i := rand.Intn(3-0) + 0
+				g.CurrentMarchant = g.AllMarchants[i]
+				tmpl := generateTemplate("marchand.html", []string{"frontend/marchand.html"})
+				tmpl.Execute(w, g)
 			}
+		} else {
+			fmt.Println("nextTurn2")
+			awnser, _ := strconv.Atoi(r.FormValue("choice"))
+			g.ApplyChoice(awnser)
+			r.Form.Set("choice", "")
+			tmpl := generateTemplate("game.html", []string{"frontend/game.html"})
+			game := g.ContinueGame()
+			g.Turn++
+			tmpl.Execute(w, game)
 		}
 	} else {
 		tmpl := generateTemplate("index.html", []string{"frontend/index.html"})
 		tmpl.Execute(w, nil)
+	}
+}
+
+func (g *Game) SetupGame(item string, rep1 string, rep2 string, rep3 string) {
+	//change item to int
+	itemInt, _ := strconv.Atoi(item)
+	fmt.Println(itemInt)
+	g.AddItem(itemInt)
+	if rep1 == "left" {
+		g.PlayerInfo.Reputation += 15
+	} else {
+		g.PlayerInfo.Reputation += 5
+	}
+	if rep2 == "left" {
+		g.PlayerInfo.Reputation += 1
+	} else {
+		g.PlayerInfo.Reputation += 1
+	}
+	if rep3 == "left" {
+		g.PlayerInfo.Reputation += 1
+	} else {
+		g.PlayerInfo.Reputation += 1
 	}
 }
 
